@@ -11,8 +11,8 @@
   - Twitter: [@TO BE MADE] (https://twitter.com/link)
 
 ## Project Lead contributor
-- [To be made] <email@gmail.com>
-  - GitHub: [@TO BE MADE](https://github.com/link)
+- [Amina lkhoyaali] <aminalkhoyaali@gmail.com>
+  - GitHub: [@aminalkhoyaali](https://github.com/aminalkhoyaali)
   - Twitter: [@TO BE MADE] (https://twitter.com/link)
 
 ## Project Lead contributor
