@@ -16,8 +16,8 @@
   - Twitter: [@amina_lkhoyaali](https://twitter.com/amina_lkhoyaali)
 
 ## Project Lead contributor
-- [To be made] <email@gmail.com>
-  - GitHub: [@TO BE MADE](https://github.com/link)
+- [hanaa belaid] <belaid.hanaa@etu.uae.ac.am>
+  - GitHub: [@hanaabelaid](https://github.com/hanaabelaid)
   - Twitter: [@TO BE MADE] (https://twitter.com/link)
 
 
