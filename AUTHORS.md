@@ -8,7 +8,7 @@
 ## Project Lead contributor
 - [Firdaous Fatmi] <ftmfirdaous@gmail.com>
   - GitHub: [@firdaous01](https://github.com/Firdaous01)
-  - Twitter: [@TO BE MADE] (https://twitter.com/link)
+  - Twitter: [@skkywalkerr01] (https://twitter.com/skkywalkerr01)
 
 ## Project Lead contributor
 - [Amina lkhoyaali] <aminalkhoyaali@gmail.com>
