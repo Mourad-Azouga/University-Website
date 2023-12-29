@@ -13,7 +13,7 @@
 ## Project Lead contributor
 - [Amina lkhoyaali] <aminalkhoyaali@gmail.com>
   - GitHub: [@aminalkhoyaali](https://github.com/aminalkhoyaali)
-  - Twitter: [@amina_lkhoyaali] (https://twitter.com/amina_lkhoyaali)
+  - Twitter: [@amina_lkhoyaali](https://twitter.com/amina_lkhoyaali)
 
 ## Project Lead contributor
 - [To be made] <email@gmail.com>
