@@ -1,3 +1,8 @@
 #CHANGELOG
 ## 29/12/2023:
--Created the repo and made the initial files -Mourad
+-Created the repo and made the initial files. -Mourad
+
+## 30/12/2023:
+-Added very simple home with one button. -Mourad
+-Added login page and the support page. -Mourad
+-Downloaded LARAVEL MIX but not used it. -Mourad
