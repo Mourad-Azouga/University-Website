@@ -21,19 +21,36 @@
                     <p style="color: red;">{{ session('error') }}</p>
                 @endif
 
-                <a href="{{ url('/support') }}">Besoin de support?</a>
                 <button type="submit">Se connecter</button>
-                <button formnovalidate><a href="{{ url('/home') }}">Retour</a></button>
+                <button formnovalidate><a href="{{ url('/') }}">Retour</a></button>
             </form>
         </div>
+        <div class="form-container sign-up">
+            <form>
+                <h1>Contacter Support</h1>
+                <input type="text" placeholder="nom.prenom">
+                <input type="text" placeholder="CNE">
+                <textarea placeholder="Expliquer votre demande" rows="5" required></textarea>
+                <button>Soumettre</button>
+            </form>
+        </div>
+
         <div class="toggle-container">
             <div class="toggle">
+            <div class="toggle-panel toggle-left">
+                    <h1>Besoin du support?</h1>
+                    <p>Veuillez remplir le formulaire ci-dessous en fournissant votre adresse e-mail, CNE et le message de support.Nous nous reviendrons vers vous dans les plus brefs délais.</p>
+                    <button class="hidden" id="login">Retour</button>
+                </div>
                 <div class="toggle-panel toggle-right">
                     <h1>Bonjour !</h1>
                     <p>Veuillez entrer vos informations d'identification pour accéder à votre compte.</p>
+                    <button class="hidden" id="support">Besoin du support ?</button>
                 </div>
             </div>
         </div>
+
+
     </div>
 
     <script src="{{ asset('js/login.js') }}"></script>

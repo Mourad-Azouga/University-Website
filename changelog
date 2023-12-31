@@ -10,3 +10,4 @@
 ## 31/12/2023:
 -Changed env database from laravel to fst -Mourad
 -Added images folder in public, changed home.blade.php and added home.css and home.js - Mourad
+-Remove support page and merged it with the login page -Mourad

@@ -1,1 +1,0 @@
-/*This is a support page made by Mourad*/
