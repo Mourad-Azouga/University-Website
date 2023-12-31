@@ -23,6 +23,7 @@
 
                 <a href="{{ url('/support') }}">Besoin de support?</a>
                 <button type="submit">Se connecter</button>
+                <button formnovalidate><a href="{{ url('/home') }}">Retour</a></button>
             </form>
         </div>
         <div class="toggle-container">

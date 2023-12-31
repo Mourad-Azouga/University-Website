@@ -14,7 +14,7 @@ use App\Http\Controllers\AuthController;
 |
 */
 #Hadi dial l home 
-Route::get('/', function () { return view('home');});
+Route::get('/home', function () { return view('home');});
 
 #Hado dial login
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');

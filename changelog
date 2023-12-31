@@ -6,3 +6,7 @@
 -Added very simple home with one button. -Mourad
 -Added login page and the support page. -Mourad
 -Downloaded LARAVEL MIX but not used it. -Mourad
+
+## 31/12/2023:
+-Changed env database from laravel to fst -Mourad
+-Added images folder in public, changed home.blade.php and added home.css and home.js - Mourad
