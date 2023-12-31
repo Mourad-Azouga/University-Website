@@ -28,7 +28,7 @@
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-right">
-                    <h1>Bonjour!</h1>
+                    <h1>Bonjour !</h1>
                     <p>Veuillez entrer vos informations d'identification pour accéder à votre compte.</p>
                 </div>
             </div>

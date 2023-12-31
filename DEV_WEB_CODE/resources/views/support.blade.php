@@ -28,7 +28,7 @@
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-right">
-                    <h1>Bonjour!</h1>
+                    <h1>Bonjour !</h1>
                     <p>Veuillez remplir le formulaire ci-dessous en fournissant votre adresse e-mail, CNE et le message de support.Nous nous reviendrons vers vous dans les plus brefs délais. </p>
                 </div>
             </div>
