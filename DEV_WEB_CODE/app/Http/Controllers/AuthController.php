@@ -13,11 +13,11 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         // Your custom login logic here
-        $username = $request->input('username');
+        $email = $request->input('email');
         $password = $request->input('password');
 
         // Perform authentication, for example, check credentials against the database
-        if ($this->authenticate($username, $password)) {
+        if ($this->authenticate($email, $password)) {
             // If authentication succeeds, redirect to the dashboard or home page
             return redirect('/home');
         } else {
@@ -26,15 +26,15 @@ class AuthController extends Controller
         }
     }
 
-    private function authenticate($username, $password)
+    private function authenticate($email, $password)
     {
         // Your authentication logic goes here
         // Check the database, validate credentials, etc.
 
         // For a simple example, let's assume a hardcoded username and password
-        $validUsername = 'admin';
+        $validmail = 'admin@admin';
         $validPassword = 'admin';
 
-        return $username === $validUsername && $password === $validPassword;
+        return $username === $validemail && $password === $validPassword;
     }
 }
