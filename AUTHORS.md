@@ -18,7 +18,6 @@
 ## Project Lead contributor
 - [hanaa belaid] <belaid.hanaa@etu.uae.ac.am>
   - GitHub: [@hanaabelaid](https://github.com/hanaabelaid)
-  - Twitter: [@TO BE MADE] (https://twitter.com/link)
 
 
 
