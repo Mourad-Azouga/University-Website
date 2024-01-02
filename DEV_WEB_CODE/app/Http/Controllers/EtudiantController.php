@@ -8,7 +8,6 @@ class EtudiantController extends Controller
 {
     public function index()
     {
-        // Add any logic specific to the etudiant dashboard here
         return view('dashboards.etudiant');
     }
 }
