@@ -15,8 +15,8 @@
             <form method="post" action="{{ url('/login') }}">
                 @csrf
                 <h1>S'authentifier</h1>
-                <input type="email" placeholder="email" required>
-                <input type="password" placeholder="Mot de passe" required>
+                <input type="email" name="email" placeholder="email" required>
+                <input type="password" name="password" placeholder="Mot de passe" required>
                 @if(session('error'))
                     <p style="color: red;">{{ session('error') }}</p>
                 @endif
@@ -57,3 +57,4 @@
 </body>
 
 </html>
+

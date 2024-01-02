@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
-{
+{   
+ 
     public function showLoginForm()
     {
         return view('auth.login');
@@ -15,14 +16,30 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
+        $authenticationAttempt = Auth::attempt($credentials);
 
-        // Attempt to authenticate the user
-        if (Auth::attempt($credentials)) {
-            // Authentication succeeded, redirect to the dashboard or home page
-            return redirect('/home');
+        if ($authenticationAttempt) {
+            return $this->redirectToRole(Auth::user()->role);
         } else {
-            // Authentication failed, redirect back to the login form with an error message
-            return redirect('/login')->with('error', 'Invalid credentials');
+            $errorMessage = 'Invalid credentials. Attempted credentials: ' . json_encode($credentials) . json_encode($authenticationAttempt);
+            var_dump($errorMessage);
+        
+    
+            return redirect('/login')->with('error', $errorMessage);
         }
     }
+    protected function redirectToRole($role)
+{
+
+    switch ($role) {
+        case 'etudiant':
+            return redirect('/etudiant-dashboard');
+        case 'delegue':
+            return redirect('/delegue-dashboard');
+        // Add cases for other roles
+        default:
+            return redirect('/');
+    }
+    
+}
 }

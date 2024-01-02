@@ -11,3 +11,6 @@
 -Changed env database from laravel to fst -Mourad
 -Added images folder in public, changed home.blade.php and added home.css and home.js - Mourad
 -Remove support page and merged it with the login page -Mourad
+
+## 02/01/2024:
+-Made login connected with the database, still having issues redirecting it to the desired pages -Mourad
