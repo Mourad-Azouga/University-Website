@@ -20,7 +20,7 @@ class AuthController extends Controller
 
         if ($authenticationAttempt) {
             $user = Auth::user();
-            return $this->redirectToRole($user->role);
+            return redirect()->route('dashboard');
         } else {
             $errorMessage = 'Invalid credentials. Attempted credentials: ' . json_encode($credentials) . json_encode($authenticationAttempt);
             var_dump($errorMessage);
@@ -34,7 +34,6 @@ class AuthController extends Controller
 
     switch ($role) {
         case 'etudiant':
-            return redirect()->route('etudiant.dashboard');
         case 'delegue':
             return redirect()->route('/delegue-dashboard');
         /*case 'delegue':

@@ -15,3 +15,6 @@
 ## 02/01/2024:
 -Removed stuff from the database and recreated it using migration, added timestamp to the table -Mourad
 -Made login connected with the database, still having issues redirecting it to the desired pages -Mourad
+
+## 03/01/2024:
+-Create all the dashboards and linked all the routes to the upgraded DashboardController -Mourad

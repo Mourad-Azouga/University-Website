@@ -1,9 +1,8 @@
 <?php
 
-use App\Http\Controllers\DelegueController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\EtudiantController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +22,7 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/etudiant-dashboard', [EtudiantController::class, 'index'])->name('etudiant.dashboard');
-    Route::get('/delegue-dashboard', [DelegueController::class, 'index'])->name('delegue.dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 });
 
 
