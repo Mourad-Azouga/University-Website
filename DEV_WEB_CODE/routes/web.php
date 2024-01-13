@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\EmploiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +23,13 @@ Route::get('/', function () { return view('home');});
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 
+#Hado dial dashboards
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 });
+#Hado dial profiles
+Route::get('/profile', [ProfileController::class, 'showProfile']);
 
+#Hado dial emploi
+Route::get('/emploi', [EmploiController::class, 'showEmploi']);
 

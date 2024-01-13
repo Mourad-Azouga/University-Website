@@ -18,3 +18,7 @@
 
 ## 03/01/2024:
 -Create all the dashboards and linked all the routes to the upgraded DashboardController -Mourad
+
+## 13/01/2024:
+-Added all the dashboards, one is fully working, needs back-end linkage now.
+-Added profile page, working for all dashboards when clicking the name(It should get its data from the database -Not done yet)
