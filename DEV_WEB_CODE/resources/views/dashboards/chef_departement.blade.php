@@ -18,7 +18,7 @@
             <ul>
               <li><a href="#">
                 <i class="fas fa-user"></i>
-                <span class="nav-item" onclick="toggleDiv('content3')">Dashboard</span>
+                <span class="nav-item" onclick="untoggleall()">Dashboard</span>
               </a>
               </li>
               <li><a href="#">
@@ -28,7 +28,7 @@
               </li>
               <li><a href="#">
                 <i class="fas fa-tasks"></i>
-                <span class="nav-item" onclick="toggleDiv('annonces')">Annonces</span>
+                <span class="nav-item" onclick="toggleDiv('annonces')">Cree Annonce</span>
               </a>
               </li>
               

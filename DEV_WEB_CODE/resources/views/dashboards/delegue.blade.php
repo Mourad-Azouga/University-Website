@@ -34,17 +34,6 @@
             <span class="nav-item">Signaler Incident</span>
           </a>
           </li>
-
-          <!--<li><a href="#">
-            <i class="fas fa-cog"></i>
-            <span class="nav-item">Setting</span>
-          </a>
-          </li>
-          <li><a href="#">
-            <i class="fas fa-question-circle"></i>
-            <span class="nav-item">Help</span>
-          </a>
-          </li>-->
           <li><a href="{{ url('/') }}" class="logout">
             <i class="fas fa-sign-out-alt"></i>
             <span class="nav-item">Logout</span>
@@ -60,39 +49,6 @@
       </div>
       <div class="main-body">
         <h1>Annonces!</h1>
-      
-      <!--<div class="search_bar">
-        <input type="search" placeholder="Search job here...">
-        <select name="" id="">
-          <option>Category</option>
-          <option>Web Design</option>
-          <option>App Design</option>
-          <option>App Development</option>
-        </select>
-        <select class="filter">
-          <option>Filter</option>
-        </select>
-      </div>
-
-      <div class="tags_bar">
-        <div class="tag">
-          <i class="fas fa-times"></i>
-          <span>Programming</span>
-        </div>
-        <div class="tag">
-          <i class="fas fa-times"></i>
-          <span>Design</span>
-        </div>
-        <div class="tag">
-          <i class="fas fa-times"></i>
-          <span>PHP</span>
-        </div>
-        <div class="tag">
-          <i class="fas fa-times"></i>
-          <span>JavaScript</span>
-        </div>
-      </div>-->
-
       <div class="job_card">
         <div class="job_details">
           <div class="img">

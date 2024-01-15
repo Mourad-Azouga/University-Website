@@ -7,3 +7,9 @@ function toggleDiv(id) {
         div.style.display = 'none';
     }
 }
+function untoggleall() {
+    var empl = document.getElementById('emploi');
+    var akhra = document.getElementById('annonces');
+    akhra.style.display = 'none';
+    empl.style.display = 'none';
+}
