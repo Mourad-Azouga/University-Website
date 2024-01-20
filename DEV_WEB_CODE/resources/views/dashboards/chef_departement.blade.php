@@ -64,7 +64,6 @@
       <button type="submit">Envoyer</button>
   </form>
   </div>
-  <!-- ----------------------------------------------------- -->
   <!-- --------------------------Emploi-du-temps--------------------------- -->
 
     <div id="emploi" style="display: none;">
