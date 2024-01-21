@@ -28,3 +28,4 @@
 -Changed the content of the tables and added new users
 -Changed Etudiant.css
 -Added all table models
+-Basic liaison between prof de module and a student studying a module now works!

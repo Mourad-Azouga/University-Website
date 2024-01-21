@@ -15,12 +15,16 @@ class DashboardController extends Controller
     
         switch ($user->role) {
             case 'etudiant':
-                $announcements = Annonce::limit(5)->get();
-            return view('dashboards.etudiant', ['announcements' => $announcements]);
+                $announcements = Annonce::whereIn('ID_module', $user->modules->pluck('id_module'))
+                ->limit(5)
+                ->get();               
+                return view('dashboards.etudiant', ['announcements' => $announcements]);
 
             case 'delegue':
-                $announcements = Annonce::limit(5)->get();
-            return view('dashboards.delegue', ['announcements' => $announcements]);
+                $announcements = Annonce::whereIn('ID_module', $user->modules->pluck('id_module'))
+                ->limit(5)
+                ->get();            
+                return view('dashboards.delegue', ['announcements' => $announcements]);
 
                 case 'professeur':
                 return view('dashboards.professeur');
