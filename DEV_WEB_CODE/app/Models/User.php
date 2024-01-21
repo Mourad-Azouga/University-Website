@@ -14,12 +14,6 @@ class User extends Authenticatable
 
     protected $table = 'utilisateurs';
     protected $primaryKey = 'id_utilisateur';
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
         'id_utilisateur',
         'nom',
@@ -28,6 +22,25 @@ class User extends Authenticatable
         'password',
         'role',
     ];
-    public $timestamps = false; // Add this line
+    public $timestamps = false;
+    public function annonces()
+    {
+        return $this->hasMany(Annonce::class, 'ID_utilisateur');
+    }
+
+    public function departements()
+    {
+        return $this->belongsToMany(Departement::class, 'departementusers', 'id_utilisateur', 'id_departement');
+    }
+
+    public function filieres()
+    {
+        return $this->belongsToMany(Filiere::class, 'filiereusers', 'id_utilisateur', 'id_filiere');
+    }
+
+    public function modules()
+    {
+        return $this->belongsToMany(Module::class, 'moduleusers', 'id_utilisateur', 'id_module');
+    }
 
 }
