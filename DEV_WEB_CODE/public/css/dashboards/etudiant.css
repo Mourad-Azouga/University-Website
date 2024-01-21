@@ -170,7 +170,7 @@ h1 {
   color: blueviolet;
 }
 
-.job_card {
+.ann {
   width: 100%;
   padding: 15px;
   cursor: pointer;
@@ -183,17 +183,17 @@ h1 {
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
 }
 
-.job_details {
+.ann_details {
   display: flex;
 }
 
-.job_details .img {
+.ann_details .img {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.job_details .img i {
+.ann_details .img i {
   width: 70px;
   font-size: 3rem;
   margin-left: 1rem;
@@ -201,20 +201,20 @@ h1 {
   color: blue;
 }
 
-.job_details .text {
+.ann_details .text {
   margin-left: 2.3rem;
 }
 
-.job_details .text span {
+.ann_details .text span {
   color: rgb(116, 112, 112);
 }
 
-.job_salary {
+.ann_maker {
   text-align: right;
   color: rgb(54, 54, 54);
 }
 
-.job_card:active {
+.ann:active {
   border: 2px solid blueviolet;
   transition: 0.4s;
 }

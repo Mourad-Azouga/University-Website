@@ -11,7 +11,7 @@
       <div class="navbar">
         <div class="logo">
           <img src="./images/mourad.png" alt="">
-          <h1><a href= "{{ url('/profile') }}">AZOUGA Mourad</h1></a>
+          <h1><a href= "{{ url('/profile') }}">Nom Delegue</h1></a>
         </div>
         <ul>
           <li><a href="#">
@@ -45,12 +45,12 @@
 
     <section class="main">
       <div class="main-top">
-        <p>Bienvenu, Etudiant!</p>
+        <p>Bienvenu, Delegue!</p>
       </div>
       <div class="main-body">
         <h1>Annonces!</h1>
-      <div class="job_card">
-        <div class="job_details">
+      <div class="ann">
+        <div class="ann_details">
           <div class="img">
             <i class="fa fa-bell"></i>
           </div>
@@ -59,14 +59,14 @@
             <span>Mr.Kounaidi a annule l'exam de Soft Skills S5</span>
           </div>
         </div>
-        <div class="job_salary">
+        <div class="ann_maker">
           <h4>Mr.Kounaidi</h4>
           <span>Il ya 23 heures</span>
         </div>
       </div>
       
-      <div class="job_card">
-        <div class="job_details">
+      <div class="ann">
+        <div class="ann_details">
           <div class="img">
             <i class="fa fa-book"></i>
           </div>
@@ -75,7 +75,7 @@
             <span>Ait Kbir a ajouté un nouveau projet DEV WEB</span>
           </div>
         </div>
-        <div class="job_salary">
+        <div class="ann_maker">
           <h4>Mr.Ait Kbir</h4>
           <span>Il ya 5 jours</span>
         </div>

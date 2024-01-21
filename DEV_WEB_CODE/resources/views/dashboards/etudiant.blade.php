@@ -12,7 +12,7 @@
       <div class="navbar">
         <div class="logo">
           <img src="./images/mourad.png" alt="">
-          <h1><a href= "{{ url('/profile') }}">AZOUGA Mourad</h1></a>
+          <h1><a href= "{{ url('/profile') }}">Nom Etudiant</h1></a>
         </div>
         <ul>
           <li><a href="#">
@@ -30,21 +30,6 @@
             <span class="nav-item">Demandes</span>
           </a>
           </li>
-          <!--<li><a href="#">
-            <i class="fab fa-dochub"></i>
-            <span class="nav-item">Documnents</span>
-          </a>
-          </li>
-          <li><a href="#">
-            <i class="fas fa-cog"></i>
-            <span class="nav-item">Setting</span>
-          </a>
-          </li>
-          <li><a href="#">
-            <i class="fas fa-question-circle"></i>
-            <span class="nav-item">Help</span>
-          </a>
-          </li>-->
           <li><a href="{{ url('/') }}" class="logout">
             <i class="fas fa-sign-out-alt"></i>
             <span class="nav-item">Logout</span>
@@ -61,40 +46,10 @@
       <div class="main-body">
         <h1>Annonces!</h1>
       
-      <!--<div class="search_bar">
-        <input type="search" placeholder="Search job here...">
-        <select name="" id="">
-          <option>Category</option>
-          <option>Web Design</option>
-          <option>App Design</option>
-          <option>App Development</option>
-        </select>
-        <select class="filter">
-          <option>Filter</option>
-        </select>
-      </div>
 
-      <div class="tags_bar">
-        <div class="tag">
-          <i class="fas fa-times"></i>
-          <span>Programming</span>
-        </div>
-        <div class="tag">
-          <i class="fas fa-times"></i>
-          <span>Design</span>
-        </div>
-        <div class="tag">
-          <i class="fas fa-times"></i>
-          <span>PHP</span>
-        </div>
-        <div class="tag">
-          <i class="fas fa-times"></i>
-          <span>JavaScript</span>
-        </div>
-      </div>-->
 
-      <div class="job_card">
-        <div class="job_details">
+      <div class="ann">
+        <div class="ann_details">
           <div class="img">
             <i class="fa fa-bell"></i>
           </div>
@@ -103,14 +58,14 @@
             <span>Mr.Kounaidi a annule l'exam de Soft Skills S5</span>
           </div>
         </div>
-        <div class="job_salary">
+        <div class="ann_maker">
           <h4>Mr.Kounaidi</h4>
           <span>Il ya 23 heures</span>
         </div>
       </div>
       
-      <div class="job_card">
-        <div class="job_details">
+      <div class="ann">
+        <div class="ann_details">
           <div class="img">
             <i class="fa fa-book"></i>
           </div>
@@ -119,58 +74,11 @@
             <span>Ait Kbir a ajouté un nouveau projet DEV WEB</span>
           </div>
         </div>
-        <div class="job_salary">
+        <div class="ann_maker">
           <h4>Mr.Ait Kbir</h4>
           <span>Il ya 5 jours</span>
         </div>
       </div>
-
-      <!--<div class="job_card">
-        <div class="job_details">
-          <div class="img">
-            <i class="fab fa-facebook"></i>
-          </div>
-          <div class="text">
-            <h2>Product Developer</h2>
-            <span>Facbook - Manager Post</span>
-          </div>
-        </div>
-        <div class="job_salary">
-          <h4>$11 - $18.5k /yr</h4>
-          <span>2 days ago</span>
-        </div>
-      </div>
-
-      <div class="job_card">
-        <div class="job_details">
-          <div class="img">
-            <i class="fab fa-git-alt"></i>
-          </div>
-          <div class="text">
-            <h2>Programmer</h2>
-            <span>Github - Juni Post</span>
-          </div>
-        </div>
-        <div class="job_salary">
-          <h4>$6 - $11.5k /yr</h4>
-          <span>3 days ago</span>
-        </div>
-      </div>
-
-      <div class="job_card">
-        <div class="job_details">
-          <div class="img">
-            <i class="fab fa-youtube"></i>
-          </div>
-          <div class="text">
-            <h2>React.js Expert</h2>
-            <span>Youtube - VIP</span>
-          </div>
-        </div>
-        <div class="job_salary">
-          <h4>$12.5 - $25.5k /yr</h4>
-          <span>4 days ago</span>
-        </div>-->
       </div>
     </div>
     </section>
