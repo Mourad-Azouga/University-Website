@@ -29,7 +29,7 @@
             <img src="./images/mourad.png" alt="" width="100" height="100">
 
             <div class="name">
-                AZOUGA MOURAD
+            {{ auth()->user()->nom }} {{ auth()->user()->prenom }}
             </div>
 
         </div>
@@ -47,28 +47,24 @@
                         <tr>
                             <td>Nom Complet</td>
                             <td>:</td>
-                            <td>AZOUGA Mourad</td>
+                            <td>{{ auth()->user()->nom }} {{ auth()->user()->prenom }}</td>
                         </tr>
                         <tr>
                             <td>Email</td>
                             <td>:</td>
-                            <td>mourad.azouga@uae.ac.etu.ma</td>
+                            <td>{{ auth()->user()->email }}</td>
                         </tr>
                         <tr>
                             <td>Role</td>
                             <td>:</td>
-                            <td>Etudiant</td>
+                            <td>{{ auth()->user()->role }}</td>
                         </tr>
                         <tr>
-                            <td>Code apogée</td>
+                            <td>ID</td>
                             <td>:</td>
-                            <td>20009300</td>
+                            <td>{{ auth()->user()->id_utilisateur }}</td>
                         </tr>
-                        <tr>
-                            <td>Etape</td>
-                            <td>:</td>
-                            <td>3° Année Analytique Des Données</td>
-                        </tr>
+                        
                     </tbody>
                 </table>
             </div>

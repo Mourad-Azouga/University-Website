@@ -5,6 +5,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmploiController;
+use App\Http\Controllers\ProfessorController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +35,5 @@ Route::get('/profile', [ProfileController::class, 'showProfile']);
 #Hado dial emploi
 Route::get('/emploi', [EmploiController::class, 'showEmploi']);
 
+#Hadi bach prof ydir annonce n les etudiants dialo
+Route::post('/professor/add-announcement', [ProfessorController::class, 'addAnnouncement'])->name('professor.addAnnouncement');

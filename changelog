@@ -29,3 +29,5 @@
 -Changed Etudiant.css
 -Added all table models
 -Basic liaison between prof de module and a student studying a module now works!
+-Changed the name in the dashboard to be dyamic
+-Changed the profile to be entirely dynamic

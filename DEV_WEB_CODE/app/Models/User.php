@@ -43,4 +43,8 @@ class User extends Authenticatable
         return $this->belongsToMany(Module::class, 'moduleusers', 'id_utilisateur', 'id_module');
     }
 
+    public function filiereUsers()
+    {
+        return $this->hasMany(FiliereUser::class, 'id_utilisateur');
+    }
 }

@@ -12,7 +12,7 @@
         <div class="navbar">
           <div class="logo">
             <!-- <img src="" alt=""> -->
-            <h1><a href= "{{ url('/profile') }}">MOHAMMED BOUHORMA <br></a>
+            <h1><a href="{{ url('/profile') }}">{{ auth()->user()->nom }} {{ auth()->user()->prenom }}</h1></a>
               <span></span></h1>
           </div>
           <ul>

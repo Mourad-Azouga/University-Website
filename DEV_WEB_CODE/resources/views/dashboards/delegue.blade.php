@@ -11,7 +11,7 @@
     <div class="navbar">
       <div class="logo">
         <img src="./images/mourad.png" alt="">
-        <h1><a href= "{{ url('/profile') }}">Nom Delegue</h1></a>
+        <h1><a href="{{ url('/profile') }}">{{ auth()->user()->nom }} {{ auth()->user()->prenom }}</h1></a>
       </div>
       <ul>
         <li><a href="#">

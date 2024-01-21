@@ -11,7 +11,7 @@
         <nav>
           <div class="navbar">
             <div class="logo">
-              <h1><a href= "{{ url('/profile') }}">Responsable Pedagogique</h1></a>
+            <h1><a href="{{ url('/profile') }}">{{ auth()->user()->nom }} {{ auth()->user()->prenom }}</h1></a>
             </div>
             <ul>
               <li><a href="#">

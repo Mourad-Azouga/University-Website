@@ -12,7 +12,7 @@
     <div class="navbar">
       <div class="logo">
         <img src="./images/mourad.png" alt="">
-        <h1><a href= "{{ url('/profile') }}">Nom Etudiant</h1></a>
+        <h1><a href="{{ url('/profile') }}">{{ auth()->user()->nom }} {{ auth()->user()->prenom }}</h1></a>
       </div>
       <ul>
         <li><a href="#">
@@ -47,21 +47,23 @@
   <h1>Annonces!</h1>
   @foreach ($announcements as $announcement)
     <div class="ann">
-      <div class="ann_details">
-        <div class="img">
-          <i class="fa fa-bell"></i>
+        <div class="ann_details">
+            <div class="img">
+                <i class="fa fa-bell"></i>
+            </div>
+            <div class="text">
+                <h2>{{ $announcement->Contenu }}</h2>
+                <span>{{ $announcement->created_at->diffForHumans() }}</span>
+            </div>
         </div>
-        <div class="text">
-          <h2>{{ $announcement->Contenu }}</h2>
-          <span>{{ $announcement->created_at->diffForHumans() }}</span>
+        <div class="ann_maker">
+            <h4>{{ $announcement->user->nom }} {{ $announcement->user->prenom }}</h4>
+            <span>{{ $announcement->module->nom_module }}</span>
+            <span>{{ $announcement->created_at->format('M d, Y H:i') }}</span>
         </div>
-      </div>
-      <div class="ann_maker">
-        <h4>{{ $announcement->user->name }}</h4>
-        <span>{{ $announcement->created_at->format('M d, Y H:i') }}</span>
-      </div>
     </div>
-  @endforeach
+@endforeach
+
 
 </div>
 

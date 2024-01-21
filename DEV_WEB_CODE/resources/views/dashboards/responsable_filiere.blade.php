@@ -15,7 +15,7 @@
       <div class="navbar">
         <div class="logo">
           <img src="" alt="">
-          <h1><a href= "{{ url('/profile') }}">Respo Filiere</h1></a>
+          <h1><a href="{{ url('/profile') }}">{{ auth()->user()->nom }} {{ auth()->user()->prenom }}</h1></a>
         </div>
         <ul>
           <li><a href="#">

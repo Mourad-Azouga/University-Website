@@ -1,9 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User;
+
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 use App\Models\Annonce;
+use App\Models\Module;
+use App\Models\ModuleUser;
+use App\Models\Departement;
+use App\Models\DepartementUser;
+use App\Models\Filiere;
+use App\Models\FiliereUser;
+
 
 use Illuminate\Http\Request;
 
