@@ -58,8 +58,13 @@
         </div>
         <div class="ann_maker">
             <h4>{{ $announcement->user->nom }} {{ $announcement->user->prenom }}</h4>
-            <span>{{ $announcement->module->nom_module }}</span>
-            <span>{{ $announcement->created_at->format('M d, Y H:i') }}</span>
+            <span>
+            @if ($announcement->module)
+                <span>{{ $announcement->module->nom_module }}</span>
+            @elseif ($announcement->filiere)
+                <span>{{ $announcement->filiere->nom }}</span>
+            @endif
+            <p>{{ $announcement->created_at->format('M d, Y H:i') }}</p>
         </div>
     </div>
 @endforeach

@@ -52,21 +52,27 @@
 
   @foreach ($announcements as $announcement)
     <div class="ann">
-      <div class="ann_details">
-        <div class="img">
-          <i class="fa fa-bell"></i>
+        <div class="ann_details">
+            <div class="img">
+                <i class="fa fa-bell"></i>
+            </div>
+            <div class="text">
+                <h2>{{ $announcement->Contenu }}</h2>
+                <span>{{ $announcement->created_at->diffForHumans() }}</span>
+            </div>
         </div>
-        <div class="text">
-          <h2>{{ $announcement->Contenu }}</h2>
-          <span>{{ $announcement->created_at->diffForHumans() }}</span>
+        <div class="ann_maker">
+            <h4>{{ $announcement->user->nom }} {{ $announcement->user->prenom }}</h4>
+            <span>
+            @if ($announcement->module)
+                <span>{{ $announcement->module->nom }}</span>
+            @elseif ($announcement->filiere)
+                <span>{{ $announcement->filiere->nom }}</span>
+            @endif
+            <p>{{ $announcement->created_at->format('M d, Y H:i') }}</p>
         </div>
-      </div>
-      <div class="ann_maker">
-        <h4>{{ $announcement->user->name }}</h4>
-        <span>{{ $announcement->created_at->format('M d, Y H:i') }}</span>
-      </div>
     </div>
-  @endforeach
+@endforeach
 
 </div>
   </div>

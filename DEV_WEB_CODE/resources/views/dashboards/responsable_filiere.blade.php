@@ -54,18 +54,14 @@
       <p>Bienvenu, Responsable Filiere!</p>
     </div>
      <!-- ----------------------------------Anonces---------------------------------- -->
-<div id="annonces" class="annonces" style="display: none;">
-  <form action="#" method="">
+     <div id="annonces" class="annonces" style="display: none;">
+<form action="{{ route('responsible-filiere.addAnnouncement') }}" method="POST">
+@csrf
 <label for="message">Votre Annonce :</label>
     <textarea id="message" name="message" placeholder="Entrez votre annonce..." rows="4"></textarea>
     <label for="typeRencontre">Type de rencontre :</label>
-    <div class="type-rencontre">
-        <input type="radio" id="rencontre" name="type" value="rencontre">
-        <label for="rencontre">Rencontre</label>
+    <input type="text" id="type" name="type" placeholder="Entrez le type...">
 
-        <input type="radio" id="pfe" name="type" value="pfe">
-        <label for="pfe">PFE</label>
-    </div>
 
     <button type="submit">Envoyer</button>
 </form>

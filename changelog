@@ -31,3 +31,10 @@
 -Basic liaison between prof de module and a student studying a module now works!
 -Changed the name in the dashboard to be dyamic
 -Changed the profile to be entirely dynamic
+
+## 22/01/2024
+-Added working liaison between Responsable Filiere and Students (Annonces)
+-Added new Controller for home
+-Added new logo image
+-Added fully working announcements from Chef Departement to the invite
+-All announcements work perfectly now

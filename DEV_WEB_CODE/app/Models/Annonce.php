@@ -19,6 +19,7 @@ class Annonce extends Model
         'Contenu',
         'ID_filiere',
         'ID_departement',
+        'titre'
     ];
     public $timestamps = true;
     public function user()
@@ -36,5 +37,10 @@ class Annonce extends Model
     public function departement()
     {
         return $this->belongsTo(Departement::class, 'ID_departement');
+    }
+    public function home()
+    {
+        $homePageAnnouncements = Annonce::where('Type_annonce', 'HomePage')->limit(5)->get();
+        return view('home', ['homePageAnnouncements' => $homePageAnnouncements]);
     }
 }

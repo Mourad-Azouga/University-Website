@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -23,6 +24,7 @@ class User extends Authenticatable
         'role',
     ];
     public $timestamps = false;
+    
     public function annonces()
     {
         return $this->hasMany(Annonce::class, 'ID_utilisateur');
@@ -31,6 +33,11 @@ class User extends Authenticatable
     public function departements()
     {
         return $this->belongsToMany(Departement::class, 'departementusers', 'id_utilisateur', 'id_departement');
+    }
+
+    public function departementUsers()
+    {
+        return $this->hasMany(DepartementUser::class, 'id_utilisateur');
     }
 
     public function filieres()

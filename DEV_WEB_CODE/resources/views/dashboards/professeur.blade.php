@@ -59,8 +59,6 @@
     <textarea id="message" name="message" placeholder="Entrez votre annonce..." rows="4"></textarea>
     <label for="typeRencontre">Type de rencontre :</label>
     <input type="text" id="type" name="type" placeholder="Entrez le type...">
-
-
     <button type="submit">Envoyer</button>
 </form>
 </div>

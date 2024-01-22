@@ -132,90 +132,23 @@
                 <h2>Actualites</h2>
                 <a href="#" >See all</a>
             </div>
-        <div class="review">
-            <div class="details">
-                <div class="logo">
-                <img src="./images/fsttlogo.png" alt="">
-        </div>
-            <div class="title">
-                <h2></h2>
-                <span></span>
-            </div>
-            </div>
-            <div class="review_post">
-            <p></p>
-            </div>
-        </div>
-        <div class="review">
-            <div class="details">
-                <div class="logo">
-                <img src="./images/fsttlogo.png" alt="">
-            </div>
-            <div class="title">
-                <h2></h2>
-                <span></span>
-            </div>
-            </div>
-            <div class="review_post">
-            <p></p>
-            </div>
-        </div>
-        <div class="review">
-            <div class="details">
+
+            @foreach($homePageAnnouncements as $announcement)
+    <div class="review">
+        <div class="details">
             <div class="logo">
-                <img src="./images/fsttlogo.png" alt="">
+                <img src="./images/fsttt.png" alt="">
             </div>
             <div class="title">
-                <h2></h2>
+                <h2>{{ $announcement->titre}}</h2>
                 <span></span>
             </div>
-            </div>
-            <div class="review_post">
-                <p></p>
-            </div>
         </div>
-            <div class="review">
-                <div class="details">
-            <div class="logo">
-                <img src="./images/fsttlogo.png" alt="">
-            </div>
-                <div class="title">
-                <h2></h2>
-                <span></span>
-            </div>
-            </div>
-            <div class="review_post">
-            <p></p>
-            </div>
+        <div class="review_post">
+            <p>{{ $announcement->Contenu }}</p>
         </div>
-        <div class="review">
-            <div class="details">
-            <div class="logo">
-                <img src="./images/fsttlogo.png" alt="">
-            </div>
-            <div class="title">
-                <h2></h2>
-                <span></span>
-            </div>
-            </div>
-            <div class="review_post">
-            <p></p>
-            </div>
-        </div>
-        <div class="review">
-            <div class="details">
-            <div class="logo">
-                <img src="./images/fsttlogo.png" alt="">
-            </div>
-            <div class="title">
-                <h2></h2>
-                <span></span>
-            </div>
-            </div>
-            <div class="review_post">
-            <p></p>
-            </div>
-        </div>
+    </div>
+@endforeach
         </div>
     </div>
     <script src="{{ asset('js/home.js')}}"></script>

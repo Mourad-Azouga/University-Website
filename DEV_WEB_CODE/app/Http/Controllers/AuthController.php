@@ -29,20 +29,5 @@ class AuthController extends Controller
             return redirect('/login')->with('error', $errorMessage);
         }
     }
-    protected function redirectToRole($role)
-{
 
-    switch ($role) {
-        case 'etudiant':
-        case 'delegue':
-            return redirect()->route('/delegue-dashboard');
-        /*case 'delegue':
-            return redirect()->route('/delegue-dashboard');
-        case 'delegue':
-            return redirect()->route('/delegue-dashboard');*/
-        default:
-            return redirect('/');
-    }
-    
-}
 }

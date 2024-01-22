@@ -23,13 +23,19 @@ class DashboardController extends Controller
     
         switch ($user->role) {
             case 'etudiant':
+                dd($user->departements->pluck('id_departement'));
+
                 $announcements = Annonce::whereIn('ID_module', $user->modules->pluck('id_module'))
+                ->orWhereIn('ID_filiere', $user->filieres->pluck('id_filiere'))
+                ->orWhereIn('ID_departement', $user->departements->pluck('id_departement'))
                 ->limit(5)
                 ->get();               
                 return view('dashboards.etudiant', ['announcements' => $announcements]);
 
             case 'delegue':
                 $announcements = Annonce::whereIn('ID_module', $user->modules->pluck('id_module'))
+                ->orWhereIn('ID_filiere', $user->filieres->pluck('id_filiere'))
+                ->orWhereIn('ID_departement', $user->departements->pluck('id_departement'))
                 ->limit(5)
                 ->get();            
                 return view('dashboards.delegue', ['announcements' => $announcements]);
