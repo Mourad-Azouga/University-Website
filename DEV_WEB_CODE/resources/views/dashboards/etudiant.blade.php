@@ -60,7 +60,7 @@
         <label for="id_filiere">Filière:</label>
         <select id="id_filiere" name="id_filiere">
             @foreach($filieres as $filiere)
-                <option value="{{ $filiere->id_filiere }}">{{ $filiere->name }}</option>
+                <option value="{{ $filiere->id_filiere }}">{{ $filiere->nom }}</option>
             @endforeach
         </select>
 

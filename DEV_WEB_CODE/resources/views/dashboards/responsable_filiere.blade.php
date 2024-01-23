@@ -271,7 +271,7 @@
             </div>
             <div class="ann_maker">
                 <h4>{{ $demande->status }}</h4>
-                <span>{{ $demande->type === 'professeur' ? 'Professeur' : 'Responsable Filière' }}</span>
+                <span>{{ $demande->type === 'professeur' ? 'Professeur' : ($demande->type === 'responsable_filiere' ? 'Responsable Filière' : 'Delegue') }}</span>
             </div>
             <form action="{{ route('update-demande-status', $demande->id_demande) }}" method="post">
             @csrf

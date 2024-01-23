@@ -35,7 +35,7 @@ public function addDemande(Request $request)
 {
     $request->validate([
         'contenu' => 'required|string',
-        'type' => 'required|in:teacher,responsable_filiere',
+        'type' => 'required',
     ]);
 
     $studentid = auth()->user()->id_utilisateur;

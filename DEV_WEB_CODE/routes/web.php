@@ -10,6 +10,8 @@ use App\Http\Controllers\ResponsableFiliereController;
 use App\Http\Controllers\ChefDepartementController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ResponsablePedagogiqueController;
+
 
 
 
@@ -59,4 +61,5 @@ Route::post('/etudiant/add-demande', [StudentController::class, 'addDemande'])->
 #hadi bach professeur/repo y updati demande
 Route::put('/update-demande-status/{demande}', [DashboardController::class, 'updateDemandeStatus'])->name('update-demande-status');
 
-
+#Hadi bach respo pedagogique ydir alter f emploi
+Route::post('/responsable-pedagogique/make-reservation', [ResponsablePedagogiqueController::class, 'makeReservation'])->name('responsable-pedagogique.make-reservation');

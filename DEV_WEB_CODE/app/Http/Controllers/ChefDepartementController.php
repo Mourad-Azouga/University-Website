@@ -30,7 +30,7 @@ class ChefDepartementController extends Controller
     {
         $request->validate([
             'message' => 'required',
-            'type' => 'required', // Validate type to be one of the allowed values
+            'type' => 'required',
         ]);
         $departementId = $this->getChefDepId(auth()->user()->id_utilisateur);
         
@@ -44,5 +44,31 @@ class ChefDepartementController extends Controller
 
         return redirect('/dashboard')->with('success', 'Announcement added successfully');
     }
+
+    public function addEmploi(Request $request)
+{
+    $request->validate([
+        'ID_salle' => 'required',
+        'ID_prof' => 'required',
+        'ID_module' => 'required',
+        'Crenaux' => 'required',
+        'Jours' => 'required',
+        'raison' => 'required',
+    ]);
+
+    $departementId = $this->getChefDepId(auth()->user()->id_utilisateur);
+
+    Emploi::create([
+        'ID_salle' => $request->input('ID_salle'),
+        'ID_prof' => $request->input('ID_prof'),
+        'ID_module' => $request->input('ID_module'),
+        'Crenaux' => $request->input('Crenaux'),
+        'Jours' => $request->input('Jours'),
+        'raison' => $request->input('raison'),
+        'ID_departement' => $departementId,
+    ]);
+
+    return redirect('/dashboard')->with('success', 'Emploi added successfully');
+}
 
 }

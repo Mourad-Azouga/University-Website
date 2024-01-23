@@ -6,6 +6,8 @@
     <title>Profile Page</title>
     <link rel="stylesheet" href="{{asset ('css/profile.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="icon" href="./images/fsttt.png">
+
 </head>
 <body>
     <!-- Navbar top -->

@@ -49,14 +49,14 @@
         <label for="id_module">Module:</label>
         <select id="id_module" name="id_module">
             @foreach($modules as $module)
-                <option value="{{ $module->id_module }}">{{ $module->name }}</option>
+                <option value="{{ $module->id_module }}">{{ $module->nom }}</option>
             @endforeach
         </select>
 
         <label for="id_filiere">Filière:</label>
         <select id="id_filiere" name="id_filiere">
             @foreach($filieres as $filiere)
-                <option value="{{ $filiere->id_filiere }}">{{ $filiere->name }}</option>
+                <option value="{{ $filiere->id_filiere }}">{{ $filiere->nom }}</option>
             @endforeach
         </select>
 

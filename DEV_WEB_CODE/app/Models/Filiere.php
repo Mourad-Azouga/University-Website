@@ -23,7 +23,7 @@ class Filiere extends Model
 
     public function departement()
     {
-        return $this->belongsTo(Departement::class, 'id_departement');
+        return $this->belongsTo(Departement::class, 'ID_departement');
     }
 
     public function modules()

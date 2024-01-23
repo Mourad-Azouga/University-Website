@@ -68,188 +68,56 @@
 <!-- --------------------------Emploi-du-temps--------------------------- -->
 <div id="emploi" style="display: none;">
     <label>Local :</label>
-    <input type="text" id="nameInput" placeholder="Enter Local">
+    <select name="ID_salle" required>
+        <option value="" selected disabled hidden>Choisir Local</option>
+        @foreach ($salles as $salle)
+            <option value="{{ $salle->ID_salle }}">{{ $salle->Nom_salle }}</option>
+        @endforeach
+    </select>
+    
     <label>Nom de prof :</label>
-<input type="text" id="nameInput" placeholder="Enter nom de prof"><br>
-<label>Module :</label>
-<input type="text" id="nameInput" placeholder="Enter nom de Module">
-<select name="">
-    <option value="" selected disabled hidden>Choisir Heure</option>
-    <option value="9h-10h45">9h-10h45</option>
-    <option value="11h-12h45">11h-12h45</option>
-    <option value="13h-14h45r">13h-14h45</option>
-    <option value="15h-16h45">15h-16h45</option>
-    <option value="17h-15h45">17h-18h45</option>
-</select>
-<select name="">
-  <option value="" selected disabled hidden>Choisir jour</option>
-    <option value="Lundi ">Lundi </option>
-    <option value="Mardi">Mardi</option>
-    <option value="Mercredi">Mercredi</option>
-    <option value="Jeudi">Jeudi</option>
-    <option value="Vendredi">Vendredi</option>
-    <option value="Samedi">Samedi</option>
-</select>
+    <select name="ID_prof" required>
+        <option value="" selected disabled hidden>Choisir Prof</option>
+        @foreach ($professeurs as $professeur)
+            <option value="{{ $professeur->id_utilisateur }}">{{ $professeur->nom }} {{ $professeur->prenom }}</option>
+        @endforeach
+    </select><br>
 
-<button>ajouter</button><br>
-<table class="calendar" id="infoTable">
+    <label>Module :</label>
+    <select name="ID_module" required>
+        <option value="" selected disabled hidden>Choisir Module</option>
+        @foreach ($modules as $module)
+            <option value="{{ $module->id_module }}">{{ $module->nom }}</option>
+        @endforeach
+    </select>
+
+    <label>Crenaux :</label>
+    <select name="Crenaux" required>
+        <option value="" selected disabled hidden>Choisir Heure</option>
+        <option value="9h-10h45">9h-10h45</option>
+        <option value="11h-12h45">11h-12h45</option>
+        <option value="13h-14h45">13h-14h45</option>
+        <option value="15h-16h45">15h-16h45</option>
+        <option value="17h-18h45">17h-18h45</option>
+    </select>
+
+    <label>Jour :</label>
+    <select name="Jours" required>
+        <option value="" selected disabled hidden>Choisir Jour</option>
+        <option value="Lundi">Lundi</option>
+        <option value="Mardi">Mardi</option>
+        <option value="Mercredi">Mercredi</option>
+        <option value="Jeudi">Jeudi</option>
+        <option value="Vendredi">Vendredi</option>
+        <option value="Samedi">Samedi</option>
+    </select>
+
+    <label>Raison :</label>
+    <input type="text" name="raison" placeholder="Entrer raison">
     
-    <tr>
-        <th>Heure</th>
-        <th>Lundi</th>
-        <th>Mardi</th>
-        <th>Mercredi</th>
-        <th>Jeudi</th>
-        <th>Vendredi</th>
-        <th>Samedi</th>
-    </tr>
-    <tr>
-        <td class="day">
-            <div class="module">9h-10h45</div>
-        <td class="day">
-            <div class="module">salle E15</div>
-            <div class="module"></div>
-        </td>
-        <td class="day">
-            <div class="module"></div>
-            <div class="module"></div>
-        </td>
-        <td class="day">
-            <div class="module"></div>
-            <div class="module"></div>
-        </td>
-        <td class="day">
-            <div class="module"></div>
-            <div class="module"></div>
-        </td>
-        <td class="day">
-            <div class="module"></div>
-            <div class="module"></div>
-        </td>
-        <td class="day">
-            <div class="module"></div>
-            <div class="module"></div>
-        </td>
-        
-    </tr>
-    
-    <tr>
-        <td class="day">
-            <div class="module">11h-12h45</div>
-        <td class="day">
-            <div class="module"></div>
-            <div class="module"></div>
-        </td>
-        <td class="day">
-            <div class="module"></div>
-            <div class="module"></div>
-        </td>
-        <td class="day">
-            <div class="module"></div>
-            <div class="module"></div>
-        </td>
-        <td class="day">
-            <div class="module"></div>
-            <div class="module"></div>
-        </td>
-        <td class="day">
-            <div class="module"></div>
-            <div class="module"></div>
-        </td>
-        <td class="day">
-            <div class="module"></div>
-            <div class="module"></div>
-        </td>
-        
-    </tr>
-    <tr>
-      <td class="day">
-            <div class="module">13h-14h45</div>
-        <td class="day">
-            <div class="module"></div>
-            <div class="module"></div>
-        </td>
-        <td class="day">
-            <div class="module"></div>
-            <div class="module"></div>
-        </td>
-        <td class="day">
-            <div class="module"></div>
-            <div class="module"></div>
-        </td>
-        <td class="day">
-            <div class="module"></div>
-            <div class="module"></div>
-        </td>
-        <td class="day">
-            <div class="module"></div>
-            <div class="module"></div>
-        </td>
-        <td class="day">
-            <div class="module"></div>
-            <div class="module"></div>
-        </td>
-        
-    </tr>
-    <tr>
-        <td class="day">
-            <div class="module">15h-16h45</div>
-        <td class="day">
-            <div class="module"></div>
-            <div class="module"></div>
-        </td>
-        <td class="day">
-            <div class="module"></div>
-            <div class="module"></div>
-        </td>
-        <td class="day">
-            <div class="module"></div>
-            <div class="module"></div>
-        </td>
-        <td class="day">
-            <div class="module"></div>
-            <div class="module"></div>
-        </td>
-        <td class="day">
-            <div class="module"></div>
-            <div class="module"></div>
-        </td>
-        <td class="day">
-            <div class="module"></div>
-            <div class="module"></div>
-        </td>
-        
-    </tr>
-    <tr>
-    <td class="day">
-        <div class="module">17h-15h45</div>
-    <td class="day">
-        <div class="module"></div>
-        <div class="module"></div>
-    </td>
-    <td class="day">
-        <div class="module"></div>
-        <div class="module"></div>
-    </td>
-    <td class="day">
-        <div class="module"></div>
-        <div class="module"></div>
-    </td>
-    <td class="day">
-        <div class="module"></div>
-        <div class="module"></div>
-    </td>
-    <td class="day">
-        <div class="module"></div>
-        <div class="module"></div>
-    </td>
-    <td class="day">
-        <div class="module"></div>
-        <div class="module"></div>
-    </td>
-    
-</tr>
-</table></div>
+    <button type="submit">ajouter</button><br>
+</div>
+
   <!-- ----------------------------------------------------- -->
 
         <h1>Annonces!</h1>
