@@ -5,13 +5,14 @@
   <link rel="stylesheet" href="{{asset ('css/dashboards/etudiant.css')}}" />
   <!-- Font Awesome Cdn Link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="icon" href="./images/fsttt.png">
+
 </head>
 <body>
   <div class="container">
     <nav>
       <div class="navbar">
         <div class="logo">
-          <!-- <img src="" alt=""> -->
           <h1><a href="{{ url('/profile') }}">{{ auth()->user()->nom }} {{ auth()->user()->prenom }}</h1></a>
             <span></span></h1>
         </div>

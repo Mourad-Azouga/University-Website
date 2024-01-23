@@ -38,3 +38,14 @@
 -Added new logo image
 -Added fully working announcements from Chef Departement to the invite
 -All announcements work perfectly now
+
+## 23/01/2024:
+-Added Demande table in the database
+-Added demande form for etudiant/delegue
+-Added StudentController and Demande model
+-Added link between Student/delegue and professeur/responsable_filiere
+-Added special delegue demande for delegue
+-Made all dashboards dymanic (NOt applicable for the chef_departemenet and responsable_pedagogique)
+-Gave professeur/responsable the ability to change the status of demande thus visibility (traite doesn't show)
+-Removed profile picture
+-Added new routes

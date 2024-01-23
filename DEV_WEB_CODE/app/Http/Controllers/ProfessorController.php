@@ -27,7 +27,6 @@ return null;
 }
 public function addAnnouncement(Request $request)
 {
-    // Validate the form data
     $request->validate([
         'message' => 'required',
         'type' => 'required',

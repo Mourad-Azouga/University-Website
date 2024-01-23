@@ -54,4 +54,5 @@ class User extends Authenticatable
     {
         return $this->hasMany(FiliereUser::class, 'id_utilisateur');
     }
+    
 }
