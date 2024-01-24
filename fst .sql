@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 24 jan. 2024 à 21:57
+-- Généré le : mer. 24 jan. 2024 à 22:41
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.0.28
 
@@ -54,6 +54,50 @@ INSERT INTO `annonce` (`ID_annonce`, `ID_utilisateur`, `ID_module`, `Type_annonc
 (9, 74, NULL, 'StudentDashboard', 'Test chef dep 2 Student Dashbpard', NULL, 2, '2024-01-22 13:31:50', '2024-01-22 13:31:50', ''),
 (11, 73, NULL, 'StudentDashboard', 'test chef dep 1 student dashboard', NULL, 1, '2024-01-22 13:37:39', '2024-01-22 13:37:39', ''),
 (12, 73, NULL, 'Homepage', 'Annonce dans les bannonce', NULL, 1, '2024-01-22 15:00:00', '2024-01-22 15:00:00', 'Titre pour annonce');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `classe`
+--
+
+CREATE TABLE `classe` (
+  `ID_classe` int(11) NOT NULL,
+  `Nom_classe` varchar(255) DEFAULT NULL,
+  `ID_departement` int(11) DEFAULT NULL,
+  `id_etudiante1` bigint(20) UNSIGNED DEFAULT NULL,
+  `id_etudiante2` bigint(20) UNSIGNED DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `classe`
+--
+
+INSERT INTO `classe` (`ID_classe`, `Nom_classe`, `ID_departement`, `id_etudiante1`, `id_etudiante2`) VALUES
+(1, 'AD_PROMO1', 1, 64, 65),
+(2, 'IDIA_PROMO1', 1, 66, 67),
+(3, 'GI_PROMO2', 2, 68, 69);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `classusers`
+--
+
+CREATE TABLE `classusers` (
+  `id_module` int(11) NOT NULL,
+  `id_utilisateur` bigint(20) UNSIGNED NOT NULL,
+  `id_classe` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `classusers`
+--
+
+INSERT INTO `classusers` (`id_module`, `id_utilisateur`, `id_classe`) VALUES
+(1, 58, 1),
+(2, 60, 2),
+(5, 61, 3);
 
 -- --------------------------------------------------------
 
@@ -423,6 +467,23 @@ ALTER TABLE `annonce`
   ADD KEY `ID_departement` (`ID_departement`);
 
 --
+-- Index pour la table `classe`
+--
+ALTER TABLE `classe`
+  ADD PRIMARY KEY (`ID_classe`),
+  ADD KEY `ID_departement` (`ID_departement`),
+  ADD KEY `fk_etudiante1` (`id_etudiante1`),
+  ADD KEY `fk_etudiante2` (`id_etudiante2`);
+
+--
+-- Index pour la table `classusers`
+--
+ALTER TABLE `classusers`
+  ADD PRIMARY KEY (`id_module`,`id_utilisateur`),
+  ADD KEY `id_utilisateur` (`id_utilisateur`),
+  ADD KEY `fk_id_classe` (`id_classe`);
+
+--
 -- Index pour la table `demandes`
 --
 ALTER TABLE `demandes`
@@ -529,6 +590,12 @@ ALTER TABLE `annonce`
   MODIFY `ID_annonce` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
+-- AUTO_INCREMENT pour la table `classe`
+--
+ALTER TABLE `classe`
+  MODIFY `ID_classe` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT pour la table `demandes`
 --
 ALTER TABLE `demandes`
@@ -594,6 +661,14 @@ ALTER TABLE `annonce`
   ADD CONSTRAINT `annonce_ibfk_2` FOREIGN KEY (`ID_module`) REFERENCES `module` (`id_module`),
   ADD CONSTRAINT `annonce_ibfk_3` FOREIGN KEY (`ID_filiere`) REFERENCES `filiere` (`id_filiere`),
   ADD CONSTRAINT `annonce_ibfk_4` FOREIGN KEY (`ID_departement`) REFERENCES `departement` (`ID_departement`);
+
+--
+-- Contraintes pour la table `classe`
+--
+ALTER TABLE `classe`
+  ADD CONSTRAINT `classe_ibfk_1` FOREIGN KEY (`ID_departement`) REFERENCES `departement` (`ID_departement`),
+  ADD CONSTRAINT `fk_etudiante1` FOREIGN KEY (`id_etudiante1`) REFERENCES `utilisateurs` (`id_utilisateur`),
+  ADD CONSTRAINT `fk_etudiante2` FOREIGN KEY (`id_etudiante2`) REFERENCES `utilisateurs` (`id_utilisateur`);
 
 --
 -- Contraintes pour la table `demandes`

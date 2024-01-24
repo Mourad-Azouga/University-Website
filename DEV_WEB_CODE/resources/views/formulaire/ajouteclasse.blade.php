@@ -57,9 +57,9 @@
               <h1><a href= "{{ url('/profile') }}">Responsable Pedagogique</h1></a>
             </div>
             <ul>
-              <li><a href="#">
+              <li><a href="{{ url('/dashboard') }}" onclick="untoggleall()">
                 <i class="fas fa-user"></i>
-                <span class="nav-item" href="{{ url('/dashboard') }}">Dashboard</span>
+                <span class="nav-item">Dashboard</span>
               </a>
               </li>
               <li><a href="#">
@@ -122,20 +122,20 @@
 
                     <form action="{{ route('ajoute_classe') }}" method="post">
                         @csrf
-                        <label for="classe">Choisir la classe :</label>
-                        <select name="classe" id="classe">
+                        <label for="id_classe">Choisir la classe :</label>
+                        <select name="id_classe" id="id_classe">
                             @foreach($classes as $classe)
                                 <option value="{{ $classe->ID_classe }}">{{ $classe->Nom_classe }} </option>
                             @endforeach
                         </select><br>
-                        <label for="module_id">Choisir le module :</label>
-                        <select name="module_id" id="module_id">
+                        <label for="id_module">Choisir le module :</label>
+                        <select name="id_module" id="id_module">
                             @foreach($modules as $module)
                                 <option value="{{ $module->id_module }}">{{ $module->nom }}</option>
                             @endforeach
                         </select>
-                        <label for="nouveau_responsable">Choisir le nouveau responsable :</label>
-                        <select name="nouveau_responsable" id="nouveau_responsable">
+                        <label for="id_professeur">Choisir le nouveau responsable :</label>
+                        <select name="id_professeur" id="id_professeur">
                             @foreach($professeurs as $professeur)
                                 <option value="{{ $professeur->id_utilisateur }}">{{ $professeur->nom }} {{ $professeur->prenom }}</option>
                             @endforeach

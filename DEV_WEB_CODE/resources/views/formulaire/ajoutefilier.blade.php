@@ -57,9 +57,9 @@
               <h1><a href= "{{ url('/profile') }}">Responsable Pedagogique</h1></a>
             </div>
             <ul>
-              <li><a href="#">
+              <li><a href="{{ url('/dashboard') }}" onclick="untoggleall()">
                 <i class="fas fa-user"></i>
-                <span class="nav-item" href="{{ url('/dashboard') }}">Dashboard</span>
+                <span class="nav-item">Dashboard</span>
               </a>
               </li>
               <li><a href="#">

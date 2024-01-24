@@ -127,104 +127,30 @@
 </div> 
   
     <!-- ----------------------------------------------------- -->
-          <div class="main-body">
-             
-            <h1>Contenu des filières</h1>
-          
-          </div>
-    
-          <div class="ann">
-            <div class="ann_details">
-              <div class="img">
-                <i class="fa fa-book"></i>
-              </div>
-              <div class="text">
-                <h2>LST : Analytique des données</h2>
-                <table border="1">
-                    <tr>
-                        <td>Semestre 5</td>
-                        <td>• Mathématiques pour la science des données<br>
-                            • Structures des données avancées et théorie des graphes<br>
-                            • Fondamentaux des bases de données<br>
-                            • Algorithmique avancée et programmation<br>
-                            • Développement WEB<br>
-                            • Développement personnel et intelligence émotionnelle (Soft skills)
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Semestre 6</td>
-                        <td>• Analyse et fouille de données<br>
-                            • Systèmes et réseaux<br>
-                            • Ingénierie des données<br>
-                            • PFE
-                        </td>
-                    </tr>
-                </table>
-              </div>
-            </div>
-          </div>
-          
-          <div class="ann">
-            <div class="ann_details">
-              <div class="img">
-                <i class="fa fa-book"></i>
-              </div>
-              <div class="text">
-                <h2>LST : Ingénierie de développement d’applications informatiques</h2>
-                <table border="1">
-                    <tr>
-                        <td>Semestre 5</td>
-                        <td>• Modélisations avancée et Méthodes de génie logiciel<br>
-                            • Développement Web<br>
-                            • Base de données Structurées et non Structurées<br>
-                            • Programmation Orientée Objet en C++/Java<br>
-                            • Systèmes et réseaux informatiques<br>
-                            • Développement de soft skills
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Semestre 6</td>
-                        <td>• Innover, Entreprendre et s’initier à la Gestion d'une Entreprise avec un ERP<br>
-                            • Initiation en développement mobile et Edge Computing<br>
-                            • Développement web avancé Back end (Python)<br>
-                            • PFE
-                        </td>
-                    </tr>
-                </table>
-              </div>
-            </div> 
-          </div>
+    <div class="main-body">
+    <h1>Contenu des filières</h1>
+</div>
 
-          <div class="ann">
-            <div class="ann_details">
-              <div class="img">
+@foreach ($filieres as $filiere)
+    <div class="ann">
+        <div class="ann_details">
+            <div class="img">
                 <i class="fa fa-book"></i>
-              </div>
-              <div class="text">
-                <h2>LST: Génie Electrique Option: GénieElectrique & Système Industriel</h2>
+            </div>
+            <div class="text">
+                <h2>{{ $filiere->nom }}:</h2>
                 <table border="1">
-                    <tr>
-                        <td>Semestre 5</td>
-                        <td>• Traitement de signal & Télécommunication<br>
-                            • Actionneurs industriels<br>
-                            • Électronique et systèmes<br>
-                            • Automatismes<br>
-                            • Électronique de puissance<br>
-                            • Gestion de maintenance et sûreté de fonctionnement
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Semestre 6</td>
-                        <td>• Management du projet<br>
-                            • Microcontrôleur microprocesseur<br>
-                            • Réseaux et base de données<br>
-                            • PFE
-                        </td>
-                    </tr>
+                    @foreach ($filiere->modules as $module)
+                        <tr>
+                            <td>{{ $module->nom }}</td>
+                        </tr>
+                    @endforeach
                 </table>
-              </div>
-            </div> 
-          </div>
+            </div>
+        </div>
+    </div>
+@endforeach
+
     
           
     

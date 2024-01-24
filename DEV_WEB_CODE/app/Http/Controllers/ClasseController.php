@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ClassUser;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use App\Models\Classe;
-use App\Models\ModuleUser;
 use App\Models\Module;
 use App\Models\User;
 
@@ -23,26 +24,41 @@ class ClasseController extends Controller
     {
         // Validate the form data
         $request->validate([
-            'id_classe' => 'required|exists:classe,ID_classe',
-            'id_module' => 'required|exists:modules,id_module',
-            'id_professeur' => 'required|exists:users,id', // assuming the primary key of users table is 'id'
+            'id_classe' => 'required|exists:classe,id_classe',
+            'id_module' => 'required|exists:module,id_module',
+            'id_professeur' => 'required|exists:utilisateurs,id_utilisateur', // assuming the primary key of users table is 'id'
         ]);
 
-        // Check if the combination of id_module and id_professeur already exists in moduleusers
-        $existingModuleUser = ModuleUser::where('id_module', $request->id_module)
-            ->where('id_utilisateur', $request->id_professeur)
-            ->first();
-
-        // If the combination doesn't exist, you may handle it accordingly (e.g., show an error message)
-        if (!$existingModuleUser) {
-            return redirect()->back()->with('error', 'Combinaison module et professeur non trouvée.');
+        // Check if the entry already exists
+        if (ClassUser::where([
+            'id_module' => $request->input('id_module'),
+            'id_utilisateur' => $request->input('id_professeur'),
+            'id_classe' => $request->input('id_classe'),
+        ])->exists()) {
+            // Entry already exists, handle accordingly (e.g., show an error message)
+            return redirect()->route('login')->with('error', 'La combinaison existe déjà dans la table.');
         }
 
-        // Update the id_classe in the moduleusers table
-        $existingModuleUser->id_classe = $request->id_classe;
-        $existingModuleUser->save();
+        // Create a new ClassUser instance
+        $classuser = new ClassUser();
+        
+        // Set the values from the form
+        $classuser->id_module = $request->input('id_module');
+        $classuser->id_utilisateur = $request->input('id_professeur');
+        $classuser->id_classe = $request->input('id_classe');
 
-        // Redirect back or to another route with a success message
-        return redirect()->route('login')->with('success', 'Id_classe ajouté avec succès.');
+        // Save the new ClassUser record
+        $classuser->save();
+
+        // Log a message
+        Log::info('New record added to classusers table.');
+
+        // Return a response or redirect
+        return redirect()->route('login')->with('success', 'Classe ajoutée avec succès.');
     }
+
+
+
+
+
 }
