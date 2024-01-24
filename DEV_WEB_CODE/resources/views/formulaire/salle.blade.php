@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="{{asset ('css/dashboards/etudiant.css')}}" />
     <meta charset="UTF-8">
+    <link rel="icon" href="./images/fsttt.png">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modifier Salle</title>
     <script>
