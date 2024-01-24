@@ -12,6 +12,16 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ResponsablePedagogiqueController;
 
+use App\Http\Controllers\ResponsableDepartementController;
+use App\Http\Controllers\ResponsableFilierController;
+use App\Http\Controllers\ResponsableModuleController;
+use App\Http\Controllers\FiliereController;
+use App\Http\Controllers\AjouteFiliereController;
+use App\Http\Controllers\SalleController;
+use App\Http\Controllers\ClasseController;
+
+
+
 
 
 
@@ -67,3 +77,40 @@ Route::post('/responsable-pedagogique/make-reservation', [ResponsablePedagogique
 #Hadi bach chef departement ydir reservations f emploi dial les salles dialo
 Route::post('/chef-departement/make-reservation', [ChefDepartementController::class, 'makeReservation'])->name('chef-departement.make-reservation');
 
+# Ajouter la route pour afficher le formulaire de modification
+Route::get('/afficher-formulaire', [ResponsableDepartementController::class, 'afficherFormulaire'])->name('afficher_formulaire');
+# Ajouter la route pour traiter le formulaire de modification
+Route::post('/modifier-responsable', [ResponsableDepartementController::class, 'modifierResponsable'])->name('modifier_responsable');
+// Route pour afficher le formulaire
+Route::get('/afficher-formulaire-filiere', [ResponsableFilierController::class, 'afficherFormulairefiliere'])->name('afficher_formulaire_filiere');
+
+// Route pour traiter la modification du responsable de la filière
+Route::post('/modifier-responsable-filiere', [ResponsableFilierController::class, 'modifierResponsablefiliere'])->name('modifier_responsable_filiere');
+//...
+
+// Route pour afficher le formulaire du module
+Route::get('/afficher-formulaire-module', [ResponsableModuleController::class, 'afficherFormulairemodule'])->name('afficher_formulaire_module');
+
+// Route pour traiter la modification du responsable du module
+Route::post('/modifier-responsable-module', [ResponsableModuleController::class, 'modifierResponsablemodule'])->name('modifier_responsable_module');
+// Afficher le formulaire
+Route::get('/afficher-formulaire-modification', [FiliereController::class, 'afficherFormulairemodification'])->name('afficher_formulaire_modification');
+
+
+// Modifier la filière et les modules
+Route::post('/modifierFiliere', [FiliereController::class, 'modifierFiliere'])->name('modifier_filiere_modules');
+
+Route::get('/affiche_formulaire_ajoute', [AjouteFiliereController::class, 'afficheFormulaireajoute'])->name('affiche_formulaire_ajoute');
+
+// Handle form submission
+Route::post('/ajoute_filiere', [AjouteFiliereController::class, 'ajouteFiliere'])->name('ajoute_filiere');
+
+Route::get('/afficher-formulaire-salle', [SalleController::class, 'affichersalle'])->name('afficher_formulaire_salle');
+Route::post('/modifier-responsable-salle', [SalleController::class, 'modifiersalle'])->name('modifier_salle');
+
+
+// Route to display the form
+Route::get('/affiche-formulaire-classe', [ClasseController::class, 'afficheFormulaireClasse'])->name('affiche_formulaire_classe');
+
+// Route to handle the form submission
+Route::post('/ajoute-classe', [ClasseController::class, 'ajouteClasse'])->name('ajoute_classe');

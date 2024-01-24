@@ -11,6 +11,7 @@ class Filiere extends Model
     protected $table = 'filiere';
 
     protected $primaryKey = 'id_filiere';
+    public $timestamps = false;
 
     protected $fillable = [
         'nom', 'description', 'id_departement',
