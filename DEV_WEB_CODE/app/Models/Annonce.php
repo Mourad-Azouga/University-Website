@@ -19,7 +19,7 @@ class Annonce extends Model
         'Contenu',
         'ID_filiere',
         'ID_departement',
-        'titre'
+        'titre',
     ];
     public $timestamps = true;
     public function user()

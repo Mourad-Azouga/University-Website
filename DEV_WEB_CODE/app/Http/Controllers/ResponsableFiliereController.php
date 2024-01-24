@@ -44,6 +44,8 @@ class ResponsableFiliereController extends Controller
             'ID_utilisateur' => auth()->user()->id_utilisateur,
             'Type_annonce' => $request->input('type'),
             'Contenu' => $request->input('message'),
+        'titre' => $request->input('titre'),
+
         ]);
 
         return redirect('/dashboard')->with('success', 'Announcement added successfully');

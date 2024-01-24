@@ -54,7 +54,7 @@ class ClasseController extends Controller
         Log::info('New record added to classusers table.');
 
         // Return a response or redirect
-        return redirect()->route('login')->with('success', 'Classe ajoutée avec succès.');
+        return redirect('/dashboard')->with('success', 'Classe ajoutée avec succès.');
     }
 
 

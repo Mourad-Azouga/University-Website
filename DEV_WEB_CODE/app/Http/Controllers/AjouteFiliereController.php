@@ -49,7 +49,7 @@ class AjouteFiliereController extends Controller
         $module2->save();
 
         // Optionally, you can redirect the user to a specific page after successful submission
-        return redirect()->route('login');
+        return redirect('/dashboard');
     }
 }
 

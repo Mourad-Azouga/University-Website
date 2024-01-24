@@ -59,8 +59,11 @@
   <textarea id="message" name="message" placeholder="Entrez votre annonce..." rows="4"></textarea>
   <label for="typeRencontre">Emplacemenet annonce :</label>
   <div class="type-rencontre">
-  <input type="radio" id="homepage" name="type" value="Homepage" checked>
 <label for="homepage">Home Page</label>
+  <input type="radio" id="homepage" name="type" value="Homepage" checked>
+  <label for="etudiant">Etudiant</label>
+  <input type="radio" id="etudiant" name="type" value="etudiant" >
+
   </div>
   <button type="submit">Envoyer</button>
 </form>

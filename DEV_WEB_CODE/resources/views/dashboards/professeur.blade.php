@@ -269,15 +269,14 @@
 <div class="row">
     <p>Vous enseignez <span>{{ $modules->count() }}</span> modules.</p>
 </div>
-<div class="ann">
     @foreach($modules as $module)
+    <div class="ann">
         <div class="ann_details">
             <div class="text">
-                <h2>{{ $module->nom}}</h2>
+                <h2>{{ $module->nom }}</h2>
             </div>
         </div>
-        <div class="ann_maker">
-        </div>
+    </div>
     @endforeach
 </div>
 

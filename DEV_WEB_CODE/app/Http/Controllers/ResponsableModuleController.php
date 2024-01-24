@@ -42,9 +42,11 @@ class ResponsableModuleController extends Controller
             Module::where('id_module', $request->input('module_id'))
                 ->update(['id_utilisateur' => $request->input('nouveau_responsable')]);
             // Créer une nouvelle entrée dans la table ModuleUser
+            
             $moduleUser = new ModuleUser;
             $moduleUser->id_module = $request->input('module_id');
             $moduleUser->id_utilisateur = $request->input('nouveau_responsable');
+
             if (!ModuleUser::where([
                 'id_module' => $moduleUser->id_module,
                 'id_utilisateur' => $moduleUser->id_utilisateur,
@@ -52,10 +54,10 @@ class ResponsableModuleController extends Controller
                 $moduleUser->save();
             }
 
-            return redirect('/')->with('success', 'Responsable du module modifié avec succès.');
+            return redirect('/dashboard')->with('success', 'Responsable du module modifié avec succès.');
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
             // Gérer l'exception, par exemple, rediriger avec un message d'erreur
-            return redirect('/')->with('error', 'Le module spécifié n\'existe pas.');
+            return redirect('/dashboard')->with('error', 'Le module spécifié n\'existe pas.');
         }
     }
 }

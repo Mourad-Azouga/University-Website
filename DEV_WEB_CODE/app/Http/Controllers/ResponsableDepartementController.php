@@ -52,10 +52,10 @@ class ResponsableDepartementController extends Controller
                 $departementUser->save();
             }
     
-            return redirect('/')->with('success', 'Responsable du département modifié avec succès.');
+            return redirect('/dashboard')->with('success', 'Responsable du département modifié avec succès.');
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
             // Gérer l'exception, par exemple, rediriger avec un message d'erreur
-            return redirect('/')->with('error', 'Le département spécifié n\'existe pas.');
+            return redirect('/dashboard')->with('error', 'Le département spécifié n\'existe pas.');
         }
     }
 }

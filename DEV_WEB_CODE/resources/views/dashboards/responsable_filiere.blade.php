@@ -268,11 +268,12 @@
 <div class="row">
     <p>Vous êtes associé à <span>{{ $filieres->count() }}</span> filières.</p>
 </div>
-<div class="ann">
 @foreach($filieres as $filiere)
-    <div class="ann_details">
-        <div class="text">
-            <h2>{{ $filiere->nom }}</h2>
+    <div class="ann">
+        <div class="ann_details">
+            <div class="text">
+                <h2>{{ $filiere->nom }}</h2>
+            </div>
         </div>
     </div>
 @endforeach

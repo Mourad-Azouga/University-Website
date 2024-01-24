@@ -38,6 +38,7 @@ public function addAnnouncement(Request $request)
         'ID_utilisateur' => $professorId,
         'Type_annonce' => $request->input('type'),
         'Contenu' => $request->input('message'),
+        'titre' => $request->input('titre'),
     ]);
 
     return redirect('/dashboard')->with('success', 'Announcement added successfully');

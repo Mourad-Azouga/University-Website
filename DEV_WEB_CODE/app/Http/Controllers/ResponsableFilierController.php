@@ -52,10 +52,10 @@ class ResponsableFilierController extends Controller
                 $filiereUser->save();
             }
 
-            return redirect('/')->with('success', 'Responsable du filiere modifié avec succès.');
+            return redirect('/dashboard')->with('success', 'Responsable du filiere modifié avec succès.');
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
             // Gérer l'exception, par exemple, rediriger avec un message d'erreur
-            return redirect('/')->with('error', 'Le filiere spécifié n\'existe pas.');
+            return redirect('/dashboard')->with('error', 'Le filiere spécifié n\'existe pas.');
         }
     }
 }
