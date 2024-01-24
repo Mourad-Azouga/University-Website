@@ -57,3 +57,4 @@
 -Made the responsable pedagogique dashboard dynamic
 -Added formation/Departement/suppor and made the homepage better
 -Added new models, and updates HomeController/AuthController
+-Updated the database
