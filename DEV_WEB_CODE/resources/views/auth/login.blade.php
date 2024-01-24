@@ -27,11 +27,13 @@
             </form>
         </div>
         <div class="form-container sign-up">
-            <form>
+        <form method="post" action="{{route('authen.support')}}">
+            @csrf
+            @method('post')
                 <h1>Contacter Support</h1>
-                <input type="text" placeholder="nom.prenom">
-                <input type="text" placeholder="CNE">
-                <textarea placeholder="Expliquer votre demande" rows="5" required></textarea>
+                <input name="nom" type="text" placeholder="nom.prenom">
+                <input name="CNE" type="text" placeholder="CNE">
+                <textarea name="demande" placeholder="Expliquer votre demande" rows="5" required></textarea>
                 <button>Soumettre</button>
             </form>
         </div>

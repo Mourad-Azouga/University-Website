@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\support;
 
 class AuthController extends Controller
 {   
@@ -29,5 +30,16 @@ class AuthController extends Controller
             return redirect('/login')->with('error', $errorMessage);
         }
     }
+    public function support(Request $request)
+    {
+        $data=$request->validate([
+            "nom" => 'required',
+            "CNE" => 'required',
+            "demande" => 'required'
+        ]);
+        $newSupport= support::create($data);
+        return redirect(('/login'));
 
+        
+    }
 }

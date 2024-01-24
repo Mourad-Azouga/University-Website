@@ -77,9 +77,9 @@ Route::post('/responsable-pedagogique/make-reservation', [ResponsablePedagogique
 #Hadi bach chef departement ydir reservations f emploi dial les salles dialo
 Route::post('/chef-departement/make-reservation', [ChefDepartementController::class, 'makeReservation'])->name('chef-departement.make-reservation');
 
-# Ajouter la route pour afficher le formulaire de modification
+# Ajouter la route pour afficher le formulaire de modification -Amina/Hanaa
 Route::get('/afficher-formulaire', [ResponsableDepartementController::class, 'afficherFormulaire'])->name('afficher_formulaire');
-# Ajouter la route pour traiter le formulaire de modification
+# Ajouter la route pour traiter le formulaire de modification Amina/Hanaa
 Route::post('/modifier-responsable', [ResponsableDepartementController::class, 'modifierResponsable'])->name('modifier_responsable');
 // Route pour afficher le formulaire
 Route::get('/afficher-formulaire-filiere', [ResponsableFilierController::class, 'afficherFormulairefiliere'])->name('afficher_formulaire_filiere');
@@ -114,3 +114,12 @@ Route::get('/affiche-formulaire-classe', [ClasseController::class, 'afficheFormu
 
 // Route to handle the form submission
 Route::post('/ajoute-classe', [ClasseController::class, 'ajouteClasse'])->name('ajoute_classe');
+
+#support -Firdaous
+Route::post('/authen/support', [AuthController::class, 'support'])->name('authen.support');
+
+#formation -Firdaous
+Route::get('/formation', [HomeController::class, 'showFormation'])->name('formation');
+
+#departement -Firdaous
+Route::get('/departement', [HomeController::class, 'showDepartement'])->name('departement');

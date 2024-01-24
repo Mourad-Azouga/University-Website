@@ -55,3 +55,5 @@
 -Added so that the chef departement can make reservations for the salles of his departement, only with professors that teach a module that's in a filiere that's in that same departement.
 -Removed the ability to make reservations for professors and Responsable Filiere.
 -Made the responsable pedagogique dashboard dynamic
+-Added formation/Departement/suppor and made the homepage better
+-Added new models, and updates HomeController/AuthController
