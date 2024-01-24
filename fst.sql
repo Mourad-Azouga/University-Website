@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 24 jan. 2024 à 21:49
+-- Généré le : mer. 24 jan. 2024 à 21:57
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.0.28
 
@@ -350,6 +350,28 @@ INSERT INTO `salle` (`ID_salle`, `Nom_salle`, `Type`, `ID_departement`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `supports`
+--
+
+CREATE TABLE `supports` (
+  `ID_support` bigint(20) UNSIGNED NOT NULL,
+  `nom` varchar(255) NOT NULL DEFAULT '',
+  `CNE` varchar(255) NOT NULL DEFAULT '',
+  `demande` varchar(255) NOT NULL DEFAULT '',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `supports`
+--
+
+INSERT INTO `supports` (`ID_support`, `nom`, `CNE`, `demande`, `created_at`, `updated_at`) VALUES
+(2, 'dd', 'dd', 'dd', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `utilisateurs`
 --
 
@@ -484,6 +506,12 @@ ALTER TABLE `salle`
   ADD PRIMARY KEY (`ID_salle`);
 
 --
+-- Index pour la table `supports`
+--
+ALTER TABLE `supports`
+  ADD PRIMARY KEY (`ID_support`);
+
+--
 -- Index pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
@@ -541,6 +569,12 @@ ALTER TABLE `module`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `supports`
+--
+ALTER TABLE `supports`
+  MODIFY `ID_support` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
