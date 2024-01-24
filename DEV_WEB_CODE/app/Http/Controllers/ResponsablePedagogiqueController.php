@@ -28,12 +28,6 @@ class ResponsablePedagogiqueController extends Controller
             'ID_module' => 'required',
         ]);
     
-        $salle = Salle::find($request->input('ID_salle'));
-
-        // Check if there is already a reservation for the salle on the given day and crenaux
-
-    
-        // Make the reservation using the Emploi model
         Emploi::create([
             'ID_prof' => $request->input('ID_prof'),    
             'ID_salle' => $request->input('ID_salle'),

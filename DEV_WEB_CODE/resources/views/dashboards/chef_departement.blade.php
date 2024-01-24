@@ -65,7 +65,10 @@
   <button type="submit">Envoyer</button>
 </form>
 </div>
+
 <!-- --------------------------Emploi-du-temps--------------------------- -->
+<form method="POST" action="{{ route('chef-departement.make-reservation') }}">
+@csrf
 <div id="emploi" style="display: none;">
     <label>Local :</label>
     <select name="ID_salle" required>
@@ -91,14 +94,14 @@
         @endforeach
     </select>
 
-    <label>Crenaux :</label>
-    <select name="Crenaux" required>
+    <label for="Crenaux">Choisir Heure :</label>
+    <select name="Crenaux" id="Crenaux" required>
         <option value="" selected disabled hidden>Choisir Heure</option>
-        <option value="9h-10h45">9h-10h45</option>
-        <option value="11h-12h45">11h-12h45</option>
-        <option value="13h-14h45">13h-14h45</option>
-        <option value="15h-16h45">15h-16h45</option>
-        <option value="17h-18h45">17h-18h45</option>
+        <option value="9:00">9h-10h45</option>
+        <option value="11:00">11h-12h45</option>
+        <option value="13:00">13h-14h45</option>
+        <option value="15:00">15h-16h45</option>
+        <option value="17:00">17h-18h45</option>
     </select>
 
     <label>Jour :</label>
@@ -117,7 +120,7 @@
     
     <button type="submit">ajouter</button><br>
 </div>
-
+</form>
   <!-- ----------------------------------------------------- -->
 
         <h1>Annonces!</h1>

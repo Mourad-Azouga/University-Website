@@ -68,31 +68,7 @@
 
 <!-- --------------------------Emploi-du-temps--------------------------- -->
 <div id="emploi" style="display: none;">
-      <label>Local :</label>
-      <input type="text" id="nameInput" placeholder="Enter Local">
-      <label>Nom de prof :</label>
-  <input type="text" id="nameInput" placeholder="Enter nom de prof"><br>
-  <label>Module :</label>
-  <input type="text" id="nameInput" placeholder="Enter nom de Module">
-  <select name="">
-      <option value="" selected disabled hidden>Choisir Heure</option>
-      <option value="9h-10h45">9h-10h45</option>
-      <option value="11h-12h45">11h-12h45</option>
-      <option value="13h-14h45r">13h-14h45</option>
-      <option value="15h-16h45">15h-16h45</option>
-      <option value="17h-15h45">17h-18h45</option>
-  </select>
-  <select name="">
-    <option value="" selected disabled hidden>Choisir jour</option>
-      <option value="Lundi ">Lundi </option>
-      <option value="Mardi">Mardi</option>
-      <option value="Mercredi">Mercredi</option>
-      <option value="Jeudi">Jeudi</option>
-      <option value="Vendredi">Vendredi</option>
-      <option value="Samedi">Samedi</option>
-  </select>
-  
-  <button>ajouter</button><br>
+
   <table class="calendar" id="infoTable">
       
       <tr>

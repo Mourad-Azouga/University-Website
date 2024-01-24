@@ -63,3 +63,7 @@ Route::put('/update-demande-status/{demande}', [DashboardController::class, 'upd
 
 #Hadi bach respo pedagogique ydir alter f emploi
 Route::post('/responsable-pedagogique/make-reservation', [ResponsablePedagogiqueController::class, 'makeReservation'])->name('responsable-pedagogique.make-reservation');
+
+#Hadi bach chef departement ydir reservations f emploi dial les salles dialo
+Route::post('/chef-departement/make-reservation', [ChefDepartementController::class, 'makeReservation'])->name('chef-departement.make-reservation');
+

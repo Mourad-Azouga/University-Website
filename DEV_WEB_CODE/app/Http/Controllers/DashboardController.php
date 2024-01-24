@@ -40,6 +40,7 @@ class DashboardController extends Controller
     
         switch ($user->role) {
             case 'etudiant':
+                #Affichage annonces
                 $user = auth()->user();
                 $modules = $user->modules;
                 $filieres = $user->filieres;
@@ -50,6 +51,7 @@ class DashboardController extends Controller
                 return view('dashboards.etudiant', ['modules' => $modules, 'filieres' => $filieres, 'announcements' => $announcements]);
 
             case 'delegue':
+                #Affichage annonces
                 $user = auth()->user();
                 $modules = $user->modules;
                 $filieres = $user->filieres;
@@ -60,6 +62,7 @@ class DashboardController extends Controller
                 return view('dashboards.delegue', ['modules' => $modules, 'filieres' => $filieres, 'announcements' => $announcements]);
 
             case 'professeur':
+                #Affichage demandes
                 $user = auth()->user();
                 $modules = $user->modules;
                 $filieres = $user->filieres;
@@ -71,6 +74,7 @@ class DashboardController extends Controller
                 return view('dashboards.professeur', ['modules' => $modules, 'filieres' => $filieres, 'demandes' => $professorDemandes]);
 
             case 'responsable_filiere':
+                #Affichage demandes
                 $user = auth()->user();
                 $filieres = $user->filieres;
                 $respo_filiereDemandes = Demande::whereIn('id_filiere', $filieres->pluck('id_filiere'))
@@ -83,17 +87,26 @@ class DashboardController extends Controller
                 }) 
                 ->limit(5)
                 ->get();
+
                 return view('dashboards.responsable_filiere', ['filieres' => $filieres, 'demandes' => $respo_filiereDemandes]);
 
             case 'chef_departement':
+                #reservartion emploi salles avec meme departement
                 $user = auth()->user();
                 $departements = $user->departements;
                 $departementId = $departements->pluck('ID_departement')->toArray();
 
                 $salles = Salle::where('ID_departement', $departementId)->get();
-                $professeurs = User::where('role', 'professeur')->get();
-                $modules = Module::all();
+                $professeurs = User::where('role', 'professeur')
+                ->whereHas('departementUsers', function ($query) use ($departementId) {
+                    $query->whereIn('id_departement', $departementId);
+                })
+                ->get();
             
+                $modules = Module::whereHas('filiere', function ($query) use ($departementId) {
+                    $query->whereIn('id_departement', $departementId);
+                })
+                ->get();            
                 $reservations = Emploi::where(function ($query) use ($departementId) {
                     $query->whereNull('ID_departement')->orWhere('ID_departement', $departementId);
                 })->get();
@@ -101,6 +114,7 @@ class DashboardController extends Controller
                 return view('dashboards.chef_departement',['salles' => $salles,'professeurs' => $professeurs,'modules' => $modules,'reservations' => $reservations]);
 
             case 'responsable_pedagogique':
+                #Reservation emploi salles sans departement
                 $salles = Salle::whereNull('ID_departement')->get();
                 $professeurs = User::where('role', 'professeur')->get();
                 $modules = Module::all();

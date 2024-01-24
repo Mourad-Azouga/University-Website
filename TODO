@@ -1,4 +1,7 @@
 #This is an internal TODO list
 -Add:
-  Module, Filiere, departement dans le tableau utilisateur 
+Make the affichage of emploi du temps
+Integrate the functionality of responsable pedagogique
+Remove the gestion d'emploi from professors and make it only affichage
+
   
