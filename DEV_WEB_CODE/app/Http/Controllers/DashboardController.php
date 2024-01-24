@@ -121,7 +121,10 @@ class DashboardController extends Controller
                 $reservations = Emploi::whereHas('salle', function ($query) {
                     $query->whereNull('ID_departement');
                 })->get();
-                return view('dashboards.responsable_pedagogique', ['salles' => $salles,'professeurs' => $professeurs,'modules' => $modules,'reservations' => $reservations]);
+                #Bach ndahro les filieres w les modules mn database
+                $filieres = Filiere::with('modules')->get();
+
+                return view('dashboards.responsable_pedagogique', ['salles' => $salles,'professeurs' => $professeurs,'modules' => $modules,'reservations' => $reservations, 'filieres' => $filieres]);
 
             default:
                 return redirect('/');
