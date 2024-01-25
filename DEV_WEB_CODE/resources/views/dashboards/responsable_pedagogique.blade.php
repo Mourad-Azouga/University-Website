@@ -67,6 +67,7 @@
                 <span class="nav-item" onclick="toggleDiv('emploi')">Emploi Du Temps</span>
               </a>
               </li>
+            
               <li><a href="#">
                 <i class="fa fa-user"></i>
                 <span class="nav-item"onclick="toggleDiv('liste')">Professeur responsable</span>
@@ -89,6 +90,7 @@
                 <span class="nav-item">Inscrire une nouvelle classe</span>
               </a>
               </li>
+            
               <li><a href="{{ url('/') }}" class="logout">
                 <i class="fas fa-sign-out-alt"></i>
                 <span class="nav-item">Logout</span>

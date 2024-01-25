@@ -13,23 +13,27 @@ class Classe extends Model
 
     protected $fillable = [
         'Nom_classe',
-        'ID_departement',
-        'id_etudiante1',
-        'id_etudiante2',
+        'id_departement',
+        'id_filiere',
+        'id_etudiant1',
+        'id_etudiant2',
     ];
 
     public function departement()
     {
-        return $this->belongsTo(Departement::class, 'ID_departement');
+        return $this->belongsTo(Departement::class, 'id_departement');
+    }
+    public function filiere()
+    {
+        return $this->belongsTo(Filiere::class, 'id_filiere');
+    }
+    public function etudiant1()
+    {
+        return $this->belongsTo(Utilisateur::class, 'id_etudiant1');
     }
 
-    public function etudiante1()
+    public function etudiant2()
     {
-        return $this->belongsTo(Utilisateur::class, 'id_etudiante1');
-    }
-
-    public function etudiante2()
-    {
-        return $this->belongsTo(Utilisateur::class, 'id_etudiante2');
+        return $this->belongsTo(Utilisateur::class, 'id_etudiant2');
     }
 }

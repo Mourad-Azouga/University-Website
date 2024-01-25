@@ -16,6 +16,7 @@ class ClasseController extends Controller
         $classes = Classe::all();
         $modules = Module::all();
         $professeurs = User::all();
+        // $filiere = Filiere::all();
 
         return view('formulaire.ajouteclasse', compact('classes', 'modules', 'professeurs'));
     }
@@ -24,28 +25,41 @@ class ClasseController extends Controller
     {
         // Validate the form data
         $request->validate([
-            'id_classe' => 'required|exists:classe,id_classe',
+            'id_classe' => 'required|exists:classe,ID_classe',
             'id_module' => 'required|exists:module,id_module',
-            'id_professeur' => 'required|exists:utilisateurs,id_utilisateur', // assuming the primary key of users table is 'id'
+            'id_professeur' => 'required|exists:utilisateurs,id_utilisateur',
         ]);
+
+        // Get the selected module
+        $classe = Classe::find($request->input('id_classe'));
+
+        // Check if the module is found
+        if (!$classe) {
+            return redirect()->back()->with('error', 'Classe non trouvé.');
+        }
+
+        // Get the id_filiere from the module
+        $id_filiere = $classe->id_filiere;
 
         // Check if the entry already exists
         if (ClassUser::where([
             'id_module' => $request->input('id_module'),
             'id_utilisateur' => $request->input('id_professeur'),
-            'id_classe' => $request->input('id_classe'),
+            'ID_classe' => $request->input('id_classe'),
+            'id_filiere' => $id_filiere,
         ])->exists()) {
             // Entry already exists, handle accordingly (e.g., show an error message)
-            return redirect()->route('login')->with('error', 'La combinaison existe déjà dans la table.');
+            return redirect()->back()->with('error', 'La combinaison existe déjà dans la table.');
         }
 
         // Create a new ClassUser instance
-        $classuser = new ClassUser();
-        
-        // Set the values from the form
-        $classuser->id_module = $request->input('id_module');
-        $classuser->id_utilisateur = $request->input('id_professeur');
-        $classuser->id_classe = $request->input('id_classe');
+        $classuser = ClassUser::firstOrCreate(
+            [
+                'id_module' => $request->input('id_module'),
+                'id_utilisateur' => $request->input('id_professeur'),
+                'ID_classe' => $request->input('id_classe'),
+                'id_filiere' => $id_filiere,
+            ]);
 
         // Save the new ClassUser record
         $classuser->save();
@@ -54,11 +68,7 @@ class ClasseController extends Controller
         Log::info('New record added to classusers table.');
 
         // Return a response or redirect
-        return redirect('/dashboard')->with('success', 'Classe ajoutée avec succès.');
+        return redirect('/dashboard')->with('success', 'Responsable du département modifié avec succès.');
     }
-
-
-
-
 
 }

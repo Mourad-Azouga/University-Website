@@ -1,5 +1,5 @@
 <?php
-// app\Models\ModuleUser.php
+
 
 namespace App\Models;
 
@@ -13,7 +13,8 @@ class ClassUser extends Model
     protected $fillable = [
         'id_module',
         'id_utilisateur',
-        'id_classe',
+        'ID_classe',
+        'id_filiere',
     ];
 
     public function module()
@@ -28,6 +29,10 @@ class ClassUser extends Model
 
     public function classe()
     {
-        return $this->belongsTo(Classe::class, 'id_classe');
+        return $this->belongsTo(Classe::class, 'ID_classe');
+    }
+    public function filiere()
+    {
+        return $this->belongsTo(Filiere::class, 'id_filiere');
     }
 }

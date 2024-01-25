@@ -15,7 +15,7 @@ class ResponsableDepartementController extends Controller
         $departements = Departement::all();
 
         // Récupérer la liste des professeurs
-        $professeurs = User::whereIn('role', ['professeur', 'responsable_filiere'])->get();
+        $professeurs = User::all();
 
         return view('formulaire.modifierResponsable', compact('departements', 'professeurs'));
     }
