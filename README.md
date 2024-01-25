@@ -1,21 +1,134 @@
-# Project DEV WEB
-### FSTT
+# PROJECTT DEV WEB
 
-But : Créer une application Web, sous PHP/MySQL, qui permet aux étudiants et à certains intervenants dans l’action pédagogique de consulter et de mettre à jour des informations liées à la communication, à l’accès à certains services et à la gestion des emplois du temps et des événements importants.  En effet, il s’agit de proposer une analyse et une conception convenables, créer et gérer une base de données puis proposer une interface Web pour se servir des fonctionnalités décrites en bas. 
+## Table of Contents
 
-Chaque département de la FST dispose d’un ensemble de locaux (Salle de cours, Salle TP … ), un local qui n’est attribué à aucun département est attaché  au service pédagogique. Un local dispose d’un planning d’occupation pour chaque semestre. Chaque jour du planning est constitué de 5 créneaux horaires de 1h 45 minutes. A chaque créneau correspond une  activité pédagogique liée à un module (Cours, TD, TP … ). 
+1. [Introduction](#introduction)
+2. [Features](#features)
+    1. [Page Formation](#page-formation)
+    2. [Page Departement](#page-departement)
+    3. [Footer Interactif](#footer-interactif)
+    4. [HomePage Interactif](#homepage-interactif)
+    5. [Actualités Dynamique](#actualités-dynamique)
+    6. [Alert Erreur Authentication](#alert-erreur-authentication)
+    7. [Support](#support)
+    8. [LoginPage Interactif](#loginpage-interactif)
+    9. [Invite Peut Voir](#invite-peut-voir)
+3. [Dashboards](#dashboards)
+    1. [Dashboard Étudiant](#dashboard-étudiant)
+    2. [Dashboard Professeur](#dashboard-professeur)
+    3. [Dashboard Responsable Filière](#dashboard-responsable-filière)
+    4. [Dashboard Chef Dep](#dashboard-chef-dep)
+    5. [Dashboard Respo Peda](#dashboard-respo-peda)
+4. [Usage](#usage)
+5. [Installation](#installation)
+6. [Contributing](#contributing)
+7. [License](#license)
 
-Chaque local  contient un ou plusieurs matériaux pédagogiques (Projecteur, ordinateur, point d’accès Wifi … ). Un matériel pédagogique peut être en panne ou opérationnel et peut subir des interventions de réparation.
+## Introduction
 
-Le site est consulté par cinq utilisateurs :
-Invité : peut consulter uniquement des informations sur les filières et leurs contenus et voir les annonces publiques liées aux départements (Soutenances de PFE, Journées portes ouvertes … ). 
-Étudiant: peut consulter son emploi du temps et les annonces postées par les professeurs responsables des modules, le responsable de filière et le chef de département. Il peut aussi faire une demande de lettre de recommandation ou d’un rendez-vous avec un professeur, justifier une absence, demander le changement de groupe de TP … . Le délégué de classe peut signaler au responsable de filière les pannes matérielles, les incidents du quotidien liés aux objets endommagés (chaise, tableau, Prise internet …).
-Professeur responsable d’un module: peut gérer les annonces liées à ses modules (Annulation d’une séance, CC …  ) et répondre aux demandes postées par les étudiants. 
-Responsable d’une filière: peut gérer les annonces (arrêt des cours, planning des soutenances … ) et répondre aux demandes postées par les étudiants.
-Chef d’un département : peut gérer les emplois  du temps des salles de son département et les annonces ( Rencontres, périodes des soutenances des PFEs… ).  
-Responsable du service pédagogique : Gère les emplois du temps des salles qui ne sont liées à aucun département - Affecter une salle à un département - Modifier le professeur responsable d’un département, d’une filière ou d’un module  - Inscrire une nouvelle classe d’étudiants dans un module - Ajouter et modifier le contenu d’une filière … . 
-Après authentification, chaque utilisateur à accès à un tableau de bord qui contient les fonctionnalités qui lui sont associées. 
+Briefly describe the purpose of the project and its main objectives.
 
-Pour plus de détails sur les filières, voir le lien : https://fstt.ac.ma/Portail2023/formation-initiale/ . Prendre en compte dans la simulation au moins deux filières appartenant à deux départements différents. 
+## Features
 
-Utiliser le Framework Laravel pour mettre en place l'application Web. Fournir un code CSS/JavaScript personnalisé (Sans utiliser JQuery ou un Framework CSS(Bootstrap ou autre)).
+### Page Formation
+
+Describe the functionality and purpose of the "Page Formation."
+
+### Page Departement
+
+Describe the functionality and purpose of the "Page Departement."
+
+### Footer Interactif
+
+Describe the functionality and purpose of the "Footer Interactif."
+
+### HomePage Interactif
+
+Describe the functionality and purpose of the "HomePage Interactif."
+
+### Actualités Dynamique
+
+Describe the functionality and purpose of the "Actualités Dynamique."
+
+### Alert Erreur Authentication
+
+Describe the functionality and purpose of the "Alert Erreur Authentication."
+
+### Support
+
+Describe the functionality and purpose of the "Support" feature.
+
+### LoginPage Interactif
+
+Describe the functionality and purpose of the "LoginPage Interactif."
+
+### Invite Peut Voir
+
+Describe the functionality and purpose of the "Invite Peut Voir."
+
+## Dashboards
+
+### Dashboard Étudiant
+
+- Students can view announcements from Chef Dep, Respo Fil, and professors with matching modules/fil/dep.
+- Students can view the timetable for their modules.
+- Students can create requests for professors and Respo Fil of their respective modules and filieres.
+- Delegates have all the rights of students plus the ability to make special requests, directing them to the Respo Fil of their associated filieres.
+- Dynamic user profile page.
+
+### Dashboard Professeur
+
+- Display classes and filieres dynamically.
+- Display dynamic requests.
+- Dynamic user profile page.
+- Ability to change the status of a request, and once a request is processed, it no longer appears.
+- Dynamic counters for requests, modules, and filieres.
+- Ability to create announcements for students with the same module.
+
+### Dashboard Responsable Filière
+
+- Display filieres and requests dynamically.
+- Dynamic user profile page.
+- Ability to receive normal student requests and delegate requests.
+- Ability to change the status of a request, and once a request is processed, it no longer appears.
+- Dynamic counters for requests/filieres.
+- Ability to create announcements for students with the same filiere.
+- Logout button.
+
+### Dashboard Chef Dep
+
+- Display departments dynamically.
+- Dynamic user profile page.
+- Ability to create announcements for the homepage or for students with the same dep.
+- Ability to change the timetable for rooms in the same department, with professors from the same department, and modules of the same rep.
+- Logout button.
+
+### Dashboard Respo Peda
+
+- Dynamic display of all filieres with modules.
+- Dynamic user profile page.
+- Logout button.
+- Ability to reserve a room that does not belong to a department, with all professors, all modules if desired.
+- Ability to change the responsible person for a module/filiere/department.
+- Ability to assign a room without a department to a department.
+- Ability to add a filiere with 2 modules and a responsible filiere.
+- Ability to modify the name/description of a filiere.
+- Ability to register a class with a module and a responsible.
+
+## Usage
+
+Explain how to use the project, including any prerequisites and step-by-step instructions.
+
+## Installation
+
+Provide instructions on how to install and set up the project on a local machine.
+
+## Contributing
+
+Explain how others can contribute to the project. Include guidelines for submitting pull requests and reporting issues.
+
+## License
+
+Specify the license under which the project is distributed. For example, use a standard open-source license like MIT or Apache 2.0.
+
+Feel free to customize this template according to the specific details of your project.
