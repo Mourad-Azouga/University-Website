@@ -22,7 +22,6 @@
 4. [Usage](#usage)
 5. [Installation](#installation)
 6. [Contributing](#contributing)
-7. [License](#license)
 
 ## Introduction
 
@@ -127,8 +126,3 @@ Provide instructions on how to install and set up the project on a local machine
 
 Explain how others can contribute to the project. Include guidelines for submitting pull requests and reporting issues.
 
-## License
-
-Specify the license under which the project is distributed. For example, use a standard open-source license like MIT or Apache 2.0.
-
-Feel free to customize this template according to the specific details of your project.
