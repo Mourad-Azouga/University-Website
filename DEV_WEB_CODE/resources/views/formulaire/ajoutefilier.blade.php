@@ -130,6 +130,20 @@
 
                         <label for="description">Description de la filière :</label>
                         <textarea name="nouvelle_description" id="nouvelle_description" rows="4" required></textarea>
+                          <!-- Utilisez le nom correct pour le champ du département -->
+                        <label for="departement_id">Choisir le département :</label>
+                        <select name="departement_id" id="departement">
+                            @foreach($departements as $departement)
+                                <option value="{{ $departement->ID_departement }}">{{ $departement->Nom_departement }}</option>
+                            @endforeach
+                        </select>
+                        <!-- Utilisez le nom correct pour le champ du nouveau responsable -->
+                        <label for="nouveau_responsable">Choisir le responsable :</label>
+                        <select name="nouveau_responsable" id="nouveau_responsable">
+                            @foreach($professeurs as $professeur)
+                                <option value="{{ $professeur->id_utilisateur }}">{{ $professeur->nom }} {{ $professeur->prenom }}</option>
+                            @endforeach
+                        </select><br>
 
                         <hr>
                         <label for="nom_module1"> Nom module1 :</label>
@@ -143,8 +157,7 @@
 
                         <label for="description_module2">Description de module :</label>
                         <textarea name="nouvelle_description2" id="nouvelle_description2" rows="4" required></textarea>
-                       
-
+                        
                         <button type="submit">Ajoute</button>
                     </form>
                 </div>

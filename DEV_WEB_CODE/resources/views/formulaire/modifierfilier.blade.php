@@ -125,9 +125,9 @@
                         @csrf
 
                         <label for="id_filiere">Choisir la filière :</label>
-                        <select name="id_filiere" id="filiere">
+                        <select name="id_filiere" id="id_filiere">
                             @foreach($filieres as $filiere)
-                                <option value="{{ $filiere->id }}">{{ $filiere->nom }}</option>
+                                <option value="{{ $filiere->id_filiere }}">{{ $filiere->nom }}</option>
                             @endforeach
                         </select>
                         

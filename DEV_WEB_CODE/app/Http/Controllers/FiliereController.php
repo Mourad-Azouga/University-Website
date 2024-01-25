@@ -27,17 +27,18 @@ class FiliereController extends Controller
         try {
             // Récupérer les données du formulaire
             $filiere = Filiere::findOrFail($request->input('id_filiere'));
-
+    
             // Mettre à jour la filière
-            $filiere->nom = $request->input('nouveau_nom');
-            $filiere->description = $request->input('nouvelle_description');
-            $filiere->save();
-
+            $filiere->update([
+                'nom' => $request->input('nouveau_nom'),
+                'description' => $request->input('nouvelle_description'),
+            ]);
+    
             // Rediriger avec un message de succès
-            return redirect()->route('login')->with('success', 'Filière modifiée avec succès.');
+            return redirect('/dashboard')->with('success', 'modifier filiere avec succès.');
         } catch (\Exception $e) {
             // En cas d'autres erreurs, gérer l'exception
             return redirect()->route('formulaire.modifierfiliere')->with('error', 'Une erreur s\'est produite lors de la modification de la filière.');
         }
-}
+    }
 }
