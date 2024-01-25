@@ -232,7 +232,6 @@
             <div class="row">
                 <h2>Actualites</h2>
             </div>
-
             @foreach($homePageAnnouncements as $announcement)
     <div class="review">
         <div class="details">

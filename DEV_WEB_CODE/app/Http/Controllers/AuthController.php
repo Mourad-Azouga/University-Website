@@ -23,7 +23,7 @@ class AuthController extends Controller
             $user = Auth::user();
             return redirect()->route('dashboard');
         } else {
-            $errorMessage = 'Invalid credentials. Attempted credentials: ' . json_encode($credentials) . json_encode($authenticationAttempt);
+            $errorMessage = 'Erreur authentication ' . json_encode($credentials);
             var_dump($errorMessage);
         
     

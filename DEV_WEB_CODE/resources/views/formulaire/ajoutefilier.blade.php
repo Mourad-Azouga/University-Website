@@ -138,7 +138,7 @@
                             @endforeach
                         </select>
                         <!-- Utilisez le nom correct pour le champ du nouveau responsable -->
-                        <label for="nouveau_responsable">Choisir le responsable :</label>
+                        <label for="nouveau_responsable">Choisir le responsable filière :</label>
                         <select name="nouveau_responsable" id="nouveau_responsable">
                             @foreach($professeurs as $professeur)
                                 <option value="{{ $professeur->id_utilisateur }}">{{ $professeur->nom }} {{ $professeur->prenom }}</option>

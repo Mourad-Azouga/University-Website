@@ -82,7 +82,10 @@ class DashboardController extends Controller
                 ->whereIn('status', ['non_vue', 'en_cours'])
                 ->limit(5)
                 ->get();
-                return view('dashboards.professeur', ['modules' => $modules, 'filieres' => $filieres, 'demandes' => $professorDemandes]);
+
+                #Affichage emploi
+                $reservations = Emploi::whereIn('ID_module', $modules->pluck('id_module'))->get();
+                return view('dashboards.professeur', ['modules' => $modules, 'filieres' => $filieres, 'demandes' => $professorDemandes, 'reservations'=>$reservations]);
 
             case 'responsable_filiere':
                 #Affichage demandes

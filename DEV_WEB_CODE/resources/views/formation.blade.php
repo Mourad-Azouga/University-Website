@@ -19,8 +19,8 @@
                 <img class="header_logo" src="./images/fsttlogo.png" alt="">
             </a>            </div>
             <div class="menu_list">
-                <a href="#" onclick="toggleDiv('content3')">Formation</a>
-                <a href="#" onclick="toggleDiv('content2')">Departement</a>
+                <a href="{{ url('/formation') }}" onclick="toggleDiv('content3')">Formation</a>
+                <a href="{{ url('/departement') }}" onclick="toggleDiv('content2')">Departement</a>
             </div>
             <div class="header_profile">
                 <div class="profile">

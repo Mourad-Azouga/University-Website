@@ -16,17 +16,17 @@
         <h1><a href="{{ url('/profile') }}">{{ auth()->user()->nom }} {{ auth()->user()->prenom }}</h1></a>
       </div>
       <ul>
-        <li><a href="">
+        <li><a href="#">
           <i class="fas fa-user"></i>
           <span class="nav-item" onclick="untoggleall()">Dashboard</span>
         </a>
         </li>
-        <li><a href="">
+        <li><a href="#">
           <i class="fa fa-calendar"></i>
-          <span class="nav-item" onclick = "toggleDiv('emploi')">Emploi du temps</span>
+          <span class="nav-item" onclick ="toggleDiv('emploi')">Emploi du temps</span>
         </a>
         </li>
-        <li><a href="">
+        <li><a href="#">
           <i class="fas fa-tasks"></i>
           <span class="nav-item" onclick="toggleDiv('demandes')">Demandes</span>
         </a>
@@ -74,7 +74,8 @@
 </div>
 
 <!--------------------------------------Demandes---------------------------------------------------->
-    <div id="demandes" class="demandes" style="display: none">
+  
+<div id="demandes" class="demandes" style="display: none;">
     <form action="{{ route('etudiant.addDemande') }}" method="POST">
         @csrf
         <label for="id_module">Module:</label>

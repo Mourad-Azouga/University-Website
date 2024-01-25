@@ -186,8 +186,7 @@
 
   <!----------------------------------------------------CALENDER---------------------------------------------------->
 
-</div><!-- hadi dial class emploi mat2adihachi>
-    <!-- ----------------------------------------------------- -->
+</div><!-- hadi dial class emploi mat2adihachi-->
     <div class="main-body">
     <h1>Contenu des filières</h1>
 </div>
