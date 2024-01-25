@@ -9,10 +9,7 @@
     3. [Footer Interactif](#footer-interactif)
     4. [HomePage Interactif](#homepage-interactif)
     5. [Actualités Dynamique](#actualités-dynamique)
-    6. [Alert Erreur Authentication](#alert-erreur-authentication)
-    7. [Support](#support)
-    8. [LoginPage Interactif](#loginpage-interactif)
-    9. [Invite Peut Voir](#invite-peut-voir)
+    9. [Login and support](#Login-and-Support)
 3. [Dashboards](#dashboards)
     1. [Dashboard Étudiant](#dashboard-étudiant)
     2. [Dashboard Professeur](#dashboard-professeur)
@@ -21,11 +18,20 @@
     5. [Dashboard Respo Peda](#dashboard-respo-peda)
 
 ## Introduction
+With the aim of improving our skills in web development module and gaining experience in this field, we were tasked with developing a university management site using different languages, templates and frameworks, as well as many features.
 
-Briefly describe the purpose of the project and its main objectives.
-
-## Features
-
+## Database
+This part covers our thinking when creating the SQL database that is used in all other pages.
+To build our database and main pages, we first need to identify the key players and functionalities of the websites. These are the following:
+Guest
+Student
+Educational service
+Department boss
+Professor responsible for a module
+Responsible for a sector
+Using the actors we defined previously as well as our knowledge of other modules like SQL, we were able to build our database.
+From various foreign keys, new columns that were added during programming.
+  
 ### Page Formation
 
 Describe the functionality and purpose of the "Page Formation."
@@ -46,21 +52,13 @@ Describe the functionality and purpose of the "HomePage Interactif."
 
 Describe the functionality and purpose of the "Actualités Dynamique."
 
-### Alert Erreur Authentication
-
-Describe the functionality and purpose of the "Alert Erreur Authentication."
-
-### Support
-
-Describe the functionality and purpose of the "Support" feature.
-
-### LoginPage Interactif
-
-Describe the functionality and purpose of the "LoginPage Interactif."
-
-### Invite Peut Voir
-
-Describe the functionality and purpose of the "Invite Peut Voir."
+### Login and Support
+Users can log in to their account using
+their email address and password. In terms of
+their role (administrator or Student), they will be redirected to the
+Proper dashboard.
+Error and Confirmation Messages: Informative messages indicating whether the connection was successful or failed.
+Support area dedicated to providing users with additional assistance and information. aims to answer frequently asked questions, resolve technical issues, and provide a means of contact for personalized assistance.
 
 ## Dashboards
 
