@@ -19,9 +19,6 @@
     3. [Dashboard Responsable Filière](#dashboard-responsable-filière)
     4. [Dashboard Chef Dep](#dashboard-chef-dep)
     5. [Dashboard Respo Peda](#dashboard-respo-peda)
-4. [Usage](#usage)
-5. [Installation](#installation)
-6. [Contributing](#contributing)
 
 ## Introduction
 
@@ -113,16 +110,3 @@ Describe the functionality and purpose of the "Invite Peut Voir."
 - Ability to add a filiere with 2 modules and a responsible filiere.
 - Ability to modify the name/description of a filiere.
 - Ability to register a class with a module and a responsible.
-
-## Usage
-
-Explain how to use the project, including any prerequisites and step-by-step instructions.
-
-## Installation
-
-Provide instructions on how to install and set up the project on a local machine.
-
-## Contributing
-
-Explain how others can contribute to the project. Include guidelines for submitting pull requests and reporting issues.
-
