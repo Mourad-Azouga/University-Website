@@ -25,4 +25,9 @@ class Module extends Model
     {
         return $this->belongsToMany(Utilisateur::class, 'moduleusers', 'id_module', 'id_utilisateur');
     }
+
+    public function emplois()
+    {
+        return $this->hasMany(Emploi::class, 'id_module');
+    }
 }

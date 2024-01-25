@@ -13,8 +13,8 @@ class Emploi extends Model
 
     protected $fillable = [
         'ID_prof',
-        'ID_module', 
-        'ID_salle', 
+        'id_module', 
+        'ID_Salle', 
         'ID_departement', 
         'Crenaux', 
         'Jours',
@@ -34,7 +34,7 @@ class Emploi extends Model
 
     public function salle()
     {
-        return $this->belongsTo(Salle::class, 'ID_salle');
+        return $this->belongsTo(Salle::class, 'ID_Salle');
     }
 
     public function departement()

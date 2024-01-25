@@ -9,7 +9,7 @@ class Classe extends Model
 {
     protected $table = 'classe';
     protected $primaryKey = 'ID_classe';
-    public $timestamps = false; // Assuming there are no created_at and updated_at columns
+    public $timestamps = false;
 
     protected $fillable = [
         'Nom_classe',

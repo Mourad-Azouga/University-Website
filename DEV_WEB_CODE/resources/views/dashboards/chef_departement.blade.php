@@ -61,8 +61,8 @@
   <div class="type-rencontre">
 <label for="homepage">Home Page</label>
   <input type="radio" id="homepage" name="type" value="Homepage" checked>
-  <label for="etudiant">Etudiant</label>
-  <input type="radio" id="etudiant" name="type" value="etudiant" >
+  <label for="StudentDashboard">Etudiant</label>
+  <input type="radio" id="StudentDashboard" name="type" value="StudentDashboard" >
 
   </div>
   <button type="submit">Envoyer</button>
@@ -125,48 +125,19 @@
 </div>
 </form>
   <!-- ----------------------------------------------------- -->
-
-        <h1>Annonces!</h1>
-      
-
-
-      <div class="ann">
-        <div class="ann_details">
-          <div class="img">
-            <i class="fa fa-bell"></i>
-          </div>
-          <div class="text">
-            <h2>Reunion 1 </h2>
-            <span>le 23/02/2024</span>
-          </div>
+  <h1>Departements:</h1>
+<div class="row">
+    <p>Vous êtes associé à <span>{{ $departements->count() }}</span> departements.</p>
+</div>
+<div class="ann">
+@foreach($departements as $dep)
+    <div class="ann_details">
+        <div class="text">
+            <h2>{{ $dep->Nom_departement }}</h2>
         </div>
-        <div class="ann_maker">
-          <h4></h4>
-          <span></span>
-        </div>
-      </div>
-      
-      <div class="ann">
-        <div class="ann_details">
-          <div class="img">
-            <i class="fa fa-book"></i>
-          </div>
-          <div class="text">
-            <h2>Reunion 2</h2>
-            <span>le 27/02/2024</span>
-          </div>
-        </div>
-        <div class="job_maker">
-          <h4></h4>
-          <span></span>
-        </div>
-      </div>
-
-      
-      </div>
     </div>
-    </section>
-  </div>
+@endforeach
+</div>
 
 </body>
 <script src="{{asset ('js/dashboards/annonces.js')}}"></script>

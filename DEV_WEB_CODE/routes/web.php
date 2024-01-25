@@ -115,6 +115,8 @@ Route::get('/affiche-formulaire-classe', [ClasseController::class, 'afficheFormu
 // Route to handle the form submission
 Route::post('/ajoute-classe', [ClasseController::class, 'ajouteClasse'])->name('ajoute_classe');
 
+
+
 #support -Firdaous
 Route::post('/authen/support', [AuthController::class, 'support'])->name('authen.support');
 

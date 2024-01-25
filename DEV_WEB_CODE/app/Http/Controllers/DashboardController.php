@@ -46,9 +46,15 @@ class DashboardController extends Controller
                 $filieres = $user->filieres;
                 $announcements = Annonce::whereIn('ID_module', $user->modules->pluck('id_module'))
                 ->orWhereIn('ID_filiere', $user->filieres->pluck('id_filiere'))
+                ->orWhereIn('ID_departement', $user->filieres->pluck('id_departement'))
+                ->where('Type_annonce', 'StudentDashboard')
                 ->limit(5)
                 ->get();               
-                return view('dashboards.etudiant', ['modules' => $modules, 'filieres' => $filieres, 'announcements' => $announcements]);
+
+                #Affichage emploi
+                $reservations = Emploi::whereIn('ID_module', $modules->pluck('id_module'))->get();
+
+                return view('dashboards.etudiant', ['modules' => $modules, 'filieres' => $filieres, 'announcements' => $announcements, 'reservations'=>$reservations]);
 
             case 'delegue':
                 #Affichage annonces
@@ -57,9 +63,14 @@ class DashboardController extends Controller
                 $filieres = $user->filieres;
                 $announcements = Annonce::whereIn('ID_module', $user->modules->pluck('id_module'))
                 ->orWhereIn('ID_filiere', $user->filieres->pluck('id_filiere'))
+                ->orWhereIn('ID_departement', $user->filieres->pluck('id_departement'))
+                ->where('Type_annonce', 'StudentDashboard')
                 ->limit(5)
-                ->get();            
-                return view('dashboards.delegue', ['modules' => $modules, 'filieres' => $filieres, 'announcements' => $announcements]);
+                ->get();  
+                
+                #Affichage emploi
+                $reservations = Emploi::whereIn('ID_module', $modules->pluck('id_module'))->get();
+                return view('dashboards.delegue', ['modules' => $modules, 'filieres' => $filieres, 'announcements' => $announcements, 'reservations'=>$reservations]);
 
             case 'professeur':
                 #Affichage demandes
@@ -111,7 +122,7 @@ class DashboardController extends Controller
                     $query->whereNull('ID_departement')->orWhere('ID_departement', $departementId);
                 })->get();
             
-                return view('dashboards.chef_departement',['salles' => $salles,'professeurs' => $professeurs,'modules' => $modules,'reservations' => $reservations]);
+                return view('dashboards.chef_departement',['salles' => $salles,'professeurs' => $professeurs,'modules' => $modules,'reservations' => $reservations, 'departements' => $departements]);
 
             case 'responsable_pedagogique':
                 #Reservation emploi salles sans departement

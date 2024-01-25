@@ -24,5 +24,10 @@ class Salle extends Model
     {
         return $this->belongsTo(Departement::class, 'ID_departement');
     }
+
+    public function emplois()
+    {
+        return $this->hasMany(Emploi::class, 'ID_Salle');
+    }
 }
 

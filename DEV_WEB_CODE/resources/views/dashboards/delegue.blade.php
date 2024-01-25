@@ -15,17 +15,17 @@
         <h1><a href="{{ url('/profile') }}">{{ auth()->user()->nom }} {{ auth()->user()->prenom }}</h1></a>
       </div>
       <ul>
-        <li><a href="#">
+        <li><a href="">
           <i class="fas fa-user"></i>
           <span class="nav-item" onclick= "untoggleall()">Dashboard</span>
         </a>
         </li>
-        <li><a href="#">
+        <li><a href="">
           <i class="fa fa-calendar"></i>
-          <span class="nav-item">Emploi du temps</span>
+          <span class="nav-item" onclick = "toggleDiv('emploi')">Emploi du temps</span>
         </a>
         </li>
-        <li><a href="#">
+        <li><a href="">
           <i class="fas fa-tasks"></i>
           <span class="nav-item" onclick="toggleDiv('demandes')">Demandes</span>
         </a>
@@ -43,7 +43,35 @@
     <div class="main-top">
       <p>Bienvenu, Delegue!</p>
     </div>
-    <div id="demandes" class="demandes" style="display: none;">
+<!--------------------------------------Emploi----------------------------------------------------->
+<div id="emploi" class="emploi"style="display: none" >
+    <h1>Votre emploi:</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Jour</th>
+                <th>Crenaux Horaire</th>
+                <th>Module</th>
+                <th>Salle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($reservations as $reservation)
+                <tr>
+                    <td>{{ $reservation->Jours }}</td>
+                    <td>{{ $reservation->Crenaux }}</td>
+                    <td>{{ $reservation->module->nom}}</td>
+                    <td>{{ $reservation->salle->Nom_salle ?? 'N/A'}}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+
+<!--------------------------------------Demandes---------------------------------------------------->
+</div>
+    <div id="demandes" class="demandes" style="display: none">
     <form action="{{ route('etudiant.addDemande') }}" method="POST">
         @csrf
         <label for="id_module">Module:</label>
@@ -74,10 +102,8 @@
         <button type="submit">Envoyer</button>
     </form>
 </div>
+<h1>Annonces!</h1>
     <div class="main-body">
-
-  <h1>Annonces!</h1>
-
   @foreach ($announcements as $announcement)
     <div class="ann">
         <div class="ann_details">
@@ -97,6 +123,8 @@
                 <span>{{ $announcement->module->nom }}</span>
             @elseif ($announcement->filiere)
                 <span>{{ $announcement->filiere->nom }}</span>
+            @elseif ($announcement->departement)
+                <span>{{ $announcement->departement->Nom_departement }}</span>
             @endif
             <p>{{ $announcement->created_at->format('M d, Y H:i') }}</p>
         </div>

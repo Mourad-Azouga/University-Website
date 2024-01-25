@@ -231,7 +231,6 @@
         <div class="sidebar">
             <div class="row">
                 <h2>Actualites</h2>
-                <a href="#" >See all</a>
             </div>
 
             @foreach($homePageAnnouncements as $announcement)
@@ -265,7 +264,7 @@
     <address>
     + 212 (0) 5 39 39 39 54 / 55<br>
           
-      <a class="footer__btn" href="administration.fstt@uae.ac.ma">Email Us</a>
+      <a class="footer__btn" href="mailto:administration.fstt@uae.ac.ma">Email Us</a>
     </address>
   </div>
   

@@ -134,7 +134,7 @@
 
 /* Side Review bar */
 .sidebar{
-  width: 300px;
+  width: 400px;
   height: 100%;
   padding: 15px;
   height: calc(100vh - 70px);
