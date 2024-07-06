@@ -101,4 +101,4 @@ To build our database and main pages, we first need to identify the key players 
 Using the actors we defined previously as well as our knowledge of other modules like SQL, we were able to build our database. From various foreign keys, new columns were added during programming.
 
 ## Video Demonstration
-A video demonstration of the site is available [here]([link-to-video](https://www.youtube.com/watch?v=_b6V4jsjOi4)).
+A video demonstration of the site is available [here]([https://www.youtube.com/watch?v=_b6V4jsjOi4]).
